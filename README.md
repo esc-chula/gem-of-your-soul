@@ -2,6 +2,8 @@
 
 ## Prerequisites
 
+This project uses `pnpm` as the Node package manager.
+
 ## Getting Started
 
 1. Clone this repository

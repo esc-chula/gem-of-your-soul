@@ -46,6 +46,29 @@ pnpm dev
 
 ## Contributing
 
+1. Create new branch
+
+```
+git checkout -b <BRANCH_NAME> origin/dev
+```
+
+2. Make your changes
+
+3. Stage and commit your changes
+
+```
+git add .
+git commit -m "<COMMIT MESSAGE>"
+```
+
+4. Push your changes
+
+```
+git push origin <BRANCH_NAME>
+```
+
+5. Create a pull request to the dev branch in GitHub
+
 Before pushing to the remote repository, make sure one has formatted their code correctly. By running this command below, the code will be formatted.
 
 ```

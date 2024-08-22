@@ -3,6 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
@@ -34,9 +35,11 @@
     "eslint-plugin-astro": "^1.2.3",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jsx-a11y": "^6.9.0",
+    "only-allow": "^1.2.1",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-organize-imports": "^4.0.0",
     "prettier-plugin-tailwindcss": "^0.6.6"
-  }
+  },
+  "packageManager": "pnpm@9.7.1"
 }

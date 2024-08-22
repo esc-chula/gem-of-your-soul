@@ -4,6 +4,18 @@
 
 This project uses `pnpm` as the Node package manager.
 
+## Project Structure
+
+```
+/
+├── public/
+└── src/
+    ├── components/
+    ├── layouts/
+    ├── pages/
+    └── stores/
+```
+
 ## Getting Started
 
 1. Clone this repository
@@ -38,6 +50,12 @@ Before pushing to the remote repository, make sure one has formatted their code 
 
 ```
 pnpm format
+```
+
+For **Windows** users, please run the following command to prevent line ending issues.
+
+```
+git config --global core.autocrlf false
 ```
 
 ### Conventional Commit Format

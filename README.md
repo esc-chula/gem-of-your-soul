@@ -10,6 +10,7 @@ This project uses `pnpm` as the Node package manager.
 /
 ├── public/
 └── src/
+    ├── assets/
     ├── components/
     ├── layouts/
     ├── pages/

@@ -34,10 +34,8 @@ if (autoRedirectSeconds > 0) {
   </head>
   <body>
     <main
-      class="absolute left-1/2 flex min-h-dvh w-full max-w-md -translate-x-1/2 bg-gray-100"
-    >
+      class="absolute left-1/2 flex min-h-dvh w-full max-w-md -translate-x-1/2 bg-gray-100">
       <img src={image.src} class="absolute -z-50 h-full w-auto" />
-
       <a class="self-center text-center text-xl font-bold" href={redirectLink}>
         {
           autoRedirectSeconds
@@ -45,7 +43,6 @@ if (autoRedirectSeconds > 0) {
             : "no auto rediret click to continue"
         }
       </a>
-
       <slot />
     </main>
   </body>

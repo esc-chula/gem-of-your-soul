@@ -3,6 +3,8 @@ import { Image } from "astro:assets";
 
 import BaseLayout from "./BaseLayout.astro";
 
+import Redirector from "@/components/Redirector";
+
 interface Props {
   title?: string;
   redirectUrl?: string;
@@ -11,16 +13,21 @@ interface Props {
 }
 
 const { title, redirectUrl, redirectInterval, image } = Astro.props;
-
-if (redirectInterval && redirectUrl) {
-  await new Promise((resolve) => setTimeout(resolve, redirectInterval * 1000));
-}
 ---
 
-<BaseLayout
-  title={title}
-  redirectUrl={redirectUrl}
-  redirectInterval={redirectInterval}>
-  <Image src={image} alt="background" class="absolute -z-50 h-full w-auto" />
-  <slot />
+<BaseLayout title={title}>
+  <div
+    class="absolute z-10 h-full w-full bg-cover bg-center"
+    style={`background-image: url(${image.src});`}>
+    <slot />
+  </div>
+  {
+    redirectUrl && redirectInterval && (
+      <Redirector
+        redirectUrl={redirectUrl}
+        redirectInterval={redirectInterval}
+        client:only
+      />
+    )
+  }
 </BaseLayout>

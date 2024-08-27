@@ -1,0 +1,14 @@
+---
+import { Image } from "astro:assets";
+
+import StartButtonGIF from "@/assets/story/start/start-button-gif.webp";
+import StartButtonPNG from "@/assets/story/start/start-button.webp";
+---
+
+<a class="hover:cursor-pointer" href="/story/0-01">
+  <Image
+    src={StartButtonGIF}
+    alt="Start"
+    style=`background-image: url(${StartButtonPNG.src});`
+  />
+</a>

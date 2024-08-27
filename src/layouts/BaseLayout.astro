@@ -9,11 +9,9 @@ import { ViewTransitions } from "astro:transitions";
 
 interface Props {
   title?: string;
-  redirectUrl?: string;
-  redirectInterval?: number;
 }
 
-const { title = "Astro APP", redirectUrl, redirectInterval } = Astro.props;
+const { title = "Astro APP" } = Astro.props;
 ---
 
 <!doctype html>
@@ -21,14 +19,6 @@ const { title = "Astro APP", redirectUrl, redirectInterval } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    {
-      redirectInterval && redirectUrl && (
-        <meta
-          http-equiv="refresh"
-          content={`${redirectInterval};url=${redirectUrl}`}
-        />
-      )
-    }
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <ViewTransitions />
@@ -36,7 +26,7 @@ const { title = "Astro APP", redirectUrl, redirectInterval } = Astro.props;
   </head>
   <body>
     <main
-      class="absolute left-1/2 flex min-h-dvh w-full max-w-md -translate-x-1/2 bg-gray-100">
+      class="absolute left-1/2 -z-50 flex min-h-dvh w-full max-w-md -translate-x-1/2 bg-gray-100">
       <slot />
     </main>
   </body>

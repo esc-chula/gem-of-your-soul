@@ -1,14 +1,21 @@
 ---
+import cn from "@/utils/cn";
+
 interface Props {
   name: string;
   text: string;
+  className?: string;
 }
 
-const { text, name } = Astro.props;
+const { text, name, className } = Astro.props;
 ---
 
-<div class="m-auto bg-orange-400 border-3 border-white rounded-lg w-80 h-fit mt-20" >
-  <p class="text-sm text-left	ml-2.5 mt-2.5 mb-2.5 break-words "><b>{name}</b> : {text}</p>
+<div
+  class={cn(
+    "border-4 border-white m-auto mt-20 h-fit w-80 rounded-xl",
+    className,
+  )}>
+  <p class="mb-2.5 ml-2.5 mt-2.5 break-words text-left text-sm">
+    <b>{name}</b> : {text}
+  </p>
 </div>
-
-

@@ -5,6 +5,7 @@ export default {
     extend: {
       colors: {
         chathai: "#FFAF75",
+        intania: "#651616",
       },
     },
   },

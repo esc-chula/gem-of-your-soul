@@ -1,0 +1,31 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+import Redirector from "@/components/Redirector";
+
+interface Props {
+  title?: string;
+  redirectUrl?: string;
+  redirectInterval?: number;
+  image: ImageMetadata;
+}
+
+const { title, redirectUrl, redirectInterval, image } = Astro.props;
+---
+
+<BaseLayout title={title}>
+  <div
+    class="absolute z-10 h-full w-full bg-cover bg-center"
+    style={`background-image: url(${image.src});`}>
+    <slot />
+  </div>
+  {
+    redirectUrl && redirectInterval && (
+      <Redirector
+        redirectUrl={redirectUrl}
+        redirectInterval={redirectInterval}
+        client:only
+      />
+    )
+  }
+</BaseLayout>

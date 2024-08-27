@@ -1,4 +1,10 @@
 ---
+import "@fontsource/chakra-petch/300.css";
+import "@fontsource/chakra-petch/400.css";
+import "@fontsource/chakra-petch/500.css";
+import "@fontsource/chakra-petch/600.css";
+import "@fontsource/chakra-petch/700.css";
+
 import { ViewTransitions } from "astro:transitions";
 
 interface Props {
@@ -11,15 +17,23 @@ const { title = "Astro APP" } = Astro.props;
 <!doctype html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
     <ViewTransitions />
     <title>{title}</title>
   </head>
   <body>
     <main
-      class="absolute left-1/2 flex min-h-dvh w-full max-w-md -translate-x-1/2 bg-gray-100"
-    >
+      class="absolute left-1/2 -z-50 flex min-h-dvh w-full max-w-md -translate-x-1/2 bg-gray-100">
       <slot />
     </main>
   </body>
 </html>
+
+<style is:global>
+  body {
+    font-family: "Chakra Petch", sans-serif;
+  }
+</style>

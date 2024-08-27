@@ -1,11 +1,9 @@
 ---
-import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 
-import BackgroundImage from "@/assets/story/scene-0/01.webp";
+import StartingScene from "@/components/StartingScene";
 ---
 
-<ImagePageLayout
-  image={BackgroundImage}
-  redirectUrl="/story/0-02"
-  redirectInterval={0.8}
-/>
+<BaseLayout>
+  <StartingScene client:only />
+</BaseLayout>

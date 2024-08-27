@@ -1,0 +1,23 @@
+---
+import AnswerButton from '../components/AnswerButton.jsx';
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const testAnswers = [
+    { text: "ตัดต้นไม้แถวนี้เลยละกัน!!", score: 10 },
+    { text: "ปกติพวกเธอขนมาจากไหน เดี๋ยวไปช่วย", score: 20 },
+    { text: "ลองสร้างอีกแบบไหม จะได้ประหยัดไม้", score: 30 },
+    { text: "ที่นี่เป็นดินแดนวิเศษหนิ มีโดเรม่อนไหมอะ", score: 40 },
+
+
+    { text: "ที่นี่เป็นดินแดนวิเศษหนิมีโดเรม่อนไหมอะที่นี่เป็นดินแดนวิเศษหนิมีโดเรม่อนไหมอะ", score: 10 },
+];
+---
+<meta charset="UTF-8">
+<BaseLayout>
+    <div class="flex flex-col h-screen w-full items-center justify-center">
+      <h1 class="text-xl font-bold mb-4 w-full max-w-sm break-words">บีเวอร์ : เยี่ยมไปเลย แต่ตอนนี้พวกเรากำลังต้องการไม้เพิ่มน่ะสิ</h1>
+      {testAnswers.map(({ text, score }) => (
+        <AnswerButton text={text} score={score} />
+      ))}
+    </div>
+</BaseLayout>

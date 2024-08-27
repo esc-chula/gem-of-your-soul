@@ -1,60 +1,26 @@
 ---
-import "@fontsource/chakra-petch/300.css";
-import "@fontsource/chakra-petch/400.css";
-import "@fontsource/chakra-petch/500.css";
-import "@fontsource/chakra-petch/600.css";
-import "@fontsource/chakra-petch/700.css";
-
-import { ViewTransitions } from "astro:transitions";
 import { Image } from "astro:assets";
 
+import BaseLayout from "./BaseLayout.astro";
+
 interface Props {
-  redirectLink: string;
-  autoRedirectSeconds?: number;
+  title?: string;
+  redirectUrl?: string;
+  redirectInterval?: number;
   image: ImageMetadata;
 }
 
-const { redirectLink, autoRedirectSeconds = 0, image } = Astro.props;
+const { title, redirectUrl, redirectInterval, image } = Astro.props;
 
-if (autoRedirectSeconds > 0) {
-  await new Promise((resolve) =>
-    setTimeout(resolve, autoRedirectSeconds * 1000),
-  );
+if (redirectInterval && redirectUrl) {
+  await new Promise((resolve) => setTimeout(resolve, redirectInterval * 1000));
 }
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <ViewTransitions />
-    <title>Image Page</title>
-
-    {
-      autoRedirectSeconds > 0 && (
-        <meta
-          http-equiv="refresh"
-          content={`${autoRedirectSeconds};url=${redirectLink}`}
-        />
-      )
-    }
-  </head>
-  <body>
-    <main
-      class="absolute left-1/2 flex min-h-dvh w-full max-w-md -translate-x-1/2 bg-gray-100"
-    >
-      <Image
-        src={image}
-        alt="background"
-        class="absolute -z-50 h-full w-auto"
-      />
-      <slot />
-    </main>
-  </body>
-</html>
-
-<style is:global>
-  body {
-    font-family: "Chakra Petch", sans-serif;
-  }
-</style>
+<BaseLayout
+  title={title}
+  redirectUrl={redirectUrl}
+  redirectInterval={redirectInterval}>
+  <Image src={image} alt="background" class="absolute -z-50 h-full w-auto" />
+  <slot />
+</BaseLayout>

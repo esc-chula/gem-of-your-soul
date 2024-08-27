@@ -21,6 +21,9 @@ if (redirectInterval && redirectUrl) {
   title={title}
   redirectUrl={redirectUrl}
   redirectInterval={redirectInterval}>
-  <Image src={image} alt="background" class="absolute -z-50 h-full w-auto" />
-  <slot />
+  <div
+    class="absolute z-10 h-full w-full bg-cover bg-center"
+    style={`background-image: url(${image.src});`}>
+    <slot />
+  </div>
 </BaseLayout>

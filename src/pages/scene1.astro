@@ -1,0 +1,16 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Textbubble from "@/components/Textbubble.astro";
+
+const name = "Cha-tai";
+const text = "YOU!!!";
+
+export interface Props {
+  text: string;
+  name: string;
+}
+---
+
+<BaseLayout>
+  <Textbubble text={text} name={name} className="bg-chathai" />
+</BaseLayout>

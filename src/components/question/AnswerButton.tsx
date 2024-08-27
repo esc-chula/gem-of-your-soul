@@ -6,6 +6,7 @@ const AnswerButton = ({
   attribute: string;
 }) => {
   const handleClick = () => {
+    // TODO: Implement stores
     console.log(`You clicked the ${attribute} button!`);
   };
 

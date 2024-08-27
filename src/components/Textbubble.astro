@@ -14,7 +14,8 @@ const { text, name, className } = Astro.props;
   class={cn(
     "border-4 border-white m-auto mt-20 h-fit w-80 rounded-xl",
     className,
-  )}>
+  )}
+>
   <p class="mb-2.5 ml-2.5 mt-2.5 break-words text-left text-sm">
     <b>{name}</b> : {text}
   </p>

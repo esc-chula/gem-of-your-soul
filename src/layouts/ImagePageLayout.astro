@@ -16,7 +16,8 @@ const { title, redirectUrl, redirectInterval, image } = Astro.props;
 <BaseLayout title={title}>
   <div
     class="absolute z-10 h-full w-full bg-cover bg-center"
-    style={`background-image: url(${image.src});`}>
+    style={`background-image: url(${image.src});`}
+  >
     <slot />
   </div>
   {

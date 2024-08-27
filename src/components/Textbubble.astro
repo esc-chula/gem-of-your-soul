@@ -1,36 +1,14 @@
 ---
 interface Props {
-    name: string;
-    text: string;
+  name: string;
+  text: string;
 }
 
-const {text, name} = Astro.props;
+const { text, name } = Astro.props;
 ---
-<div class = "text-card">
-    <p class = "card-body"><b>{name}</b> : {text}</p>
+
+<div class="m-auto bg-orange-400 border-3 border-white rounded-lg w-80 h-fit mt-20" >
+  <p class="text-sm text-left	ml-2.5 mt-2.5 mb-2.5 break-words "><b>{name}</b> : {text}</p>
 </div>
 
-<style>
-.text-card{
-    margin: auto;
-    background: rgb(242, 165, 82);
-    border: 2.75px solid #ffffff;
-    border-radius: 8px;
-    width: 330px;
-    height: fit-content;
-    margin-top: 20px;
-    
-}
-.card-body {
-    
-    font-size: 14px;
-    text-align: left;
-    margin-left: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    word-wrap: normal;
-    
-}
 
-
-</style>

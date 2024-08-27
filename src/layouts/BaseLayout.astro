@@ -16,7 +16,9 @@ const { title = "Astro APP" } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <main class="absolute left-1/2 flex min-h-dvh w-full max-w-md -translate-x-1/2 bg-gray-100">
+    <main
+      class="absolute left-1/2 flex min-h-dvh w-full max-w-md -translate-x-1/2 bg-gray-100"
+    >
       <slot />
     </main>
   </body>

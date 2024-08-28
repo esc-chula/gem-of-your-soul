@@ -6,6 +6,9 @@ export default {
       colors: {
         chathai: "#FFAF75",
         intania: "#651616",
+        user: "#FF8B74",
+        beaver: "#D7925A",
+        bull: "#95BDEC",
       },
     },
   },

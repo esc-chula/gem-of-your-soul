@@ -3,15 +3,21 @@ import cn from "@/utils/cn";
 
 interface Props {
   name: string;
-  text: string;
+  texts: string[];
   className?: string;
 }
 
-const { text, name, className } = Astro.props;
+const { name, texts, className } = Astro.props;
 ---
 
 <div class={cn("border-4 border-white h-fit w-80 rounded-xl", className)}>
   <p class="mb-2.5 ml-2.5 mt-2.5 break-words text-left text-sm">
-    <span class="font-semibold">{name}</span> : {text}
+    {
+      texts.map((text, index) => (
+        <>
+          <span class="font-semibold">{name}</span> : {text}
+        </>
+      ))
+    }
   </p>
 </div>

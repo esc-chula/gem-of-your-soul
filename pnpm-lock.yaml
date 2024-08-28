@@ -39,11 +39,8 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
       nanostores:
-        specifier: ^0.11.3
+        specifier: ^0.11.2
         version: 0.11.3
-      pnpm:
-        specifier: ^9.9.0
-        version: 9.9.0
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -2377,11 +2374,6 @@ packages:
   pkg-dir@4.2.0:
     resolution: {integrity: sha512-HRDzbaKjC+AOWVXxAU/x54COGeIv9eb+6CkDSQoNTt4XyWoIJvuPsXizxu/Fr23EiekbtZwmh1IcIG/l/a10GQ==}
     engines: {node: '>=8'}
-
-  pnpm@9.9.0:
-    resolution: {integrity: sha512-YMGKzROL/2ldM5vmrRP36TbupnRWYNTMSndtUkfFQNDt7hpWNpXBg6ZuuRfviPK0/rH8JfMqetytx6rzQ46ZwQ==}
-    engines: {node: '>=18.12'}
-    hasBin: true
 
   possible-typed-array-names@1.0.0:
     resolution: {integrity: sha512-d7Uw+eZoloe0EHDIYoe+bQ5WXnGMOpmiZFTuMWCwpjzzkL2nTjcKiAk4hh8TjnGye2TwWOk3UXucZ+3rbmBa8Q==}
@@ -5985,8 +5977,6 @@ snapshots:
   pkg-dir@4.2.0:
     dependencies:
       find-up: 4.1.0
-
-  pnpm@9.9.0: {}
 
   possible-typed-array-names@1.0.0: {}
 

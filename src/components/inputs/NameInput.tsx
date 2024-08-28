@@ -19,12 +19,14 @@ const NameInput = ({ redirectUrl }: { redirectUrl: string }) => {
     }
     userName.set(debouncedName);
 
-    window.location.href = redirectUrl;
+    setTimeout(() => {
+      window.location.href = redirectUrl;
+    }, 300);
   };
 
   return (
-    <div className="flex min-h-screen items-end justify-center">
-      <div className="mb-8 flex flex-col items-center">
+    <div className="absolute top-0 flex min-h-screen w-full items-end justify-center">
+      <div className="mb-12 flex flex-col items-center">
         <input
           type="text"
           value={name}

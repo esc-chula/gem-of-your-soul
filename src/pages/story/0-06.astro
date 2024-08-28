@@ -1,0 +1,19 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+
+import Tap from "@/components/TempTap";
+import TextBubble from "@/components/TextBubble";
+
+import BackgroundImage from "@/assets/story/scene-0/11.webp";
+---
+
+<ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
+  <div class="absolute top-20 flex w-full justify-center">
+    <TextBubble
+      name="ชาไทย"
+      texts={["อะไรสักอย่างยาว ๆ ขี้เกียจเขียน...."]}
+      className="bg-chathai"
+    />
+  </div>
+  <Tap delay={0.5} redirectUrl="/story/0-07" client:only />
+</ImagePageLayout>

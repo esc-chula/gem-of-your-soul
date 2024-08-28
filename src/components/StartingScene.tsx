@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+import Tap from "./TempTap";
+
 import Image01 from "@/assets/story/scene-0/01.webp";
 import Image02 from "@/assets/story/scene-0/02.webp";
 import Image03 from "@/assets/story/scene-0/03.webp";
@@ -11,7 +13,6 @@ const StartingScene = () => {
   const images = [Image01, Image02, Image03, Image04, Image05, Image06];
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
   const [lastImage, setLastImage] = useState<boolean>(false);
-  const [showTap, setShowTap] = useState<boolean>(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -29,15 +30,6 @@ const StartingScene = () => {
     return () => clearInterval(interval);
   }, [currentImageIndex]);
 
-  useEffect(() => {
-    if (!lastImage) {
-      return;
-    }
-    const interval = setInterval(() => {
-      setShowTap(true);
-    }, 1000);
-  }, [lastImage]);
-
   return (
     <>
       <img
@@ -48,15 +40,7 @@ const StartingScene = () => {
         }}
         className="absolute z-0"
       />
-
-      {showTap && (
-        <a
-          href="/story/0-03"
-          className="absolute bottom-1/4 right-8 z-50 rounded-full bg-yellow-100 bg-opacity-70 p-12 text-black hover:cursor-pointer"
-        >
-          Tap
-        </a>
-      )}
+      {lastImage && <Tap delay={0.5} redirectUrl="/story/0-03" />}
     </>
   );
 };

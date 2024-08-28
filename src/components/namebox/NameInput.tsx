@@ -1,17 +1,27 @@
 import { useState } from "react";
 
-import { userName } from "../../stores/nameStore";
+import { useDebounce } from "@/utils/useDebounce";
 
-const Name = () => {
+import { userName } from "@/stores/userNameStores";
+
+const NameInput = ({ redirectUrl }: { redirectUrl: string }) => {
   const [name, setName] = useState<string>("");
+  const debouncedName = useDebounce(name);
+
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
-    console.log({ name });
   };
+
   const handleConfirm = () => {
-    userName.set(name);
-    console.log("confirm name is:", userName.get());
+    if (!debouncedName) {
+      // TODO: ADD TOAST
+      return;
+    }
+    userName.set(debouncedName);
+
+    window.location.href = redirectUrl;
   };
+
   return (
     <div className="flex min-h-screen items-end justify-center">
       <div className="mb-8 flex flex-col items-center">
@@ -20,7 +30,7 @@ const Name = () => {
           value={name}
           onChange={handleNameChange}
           placeholder="โปรดใส่ชื่อของคุณ"
-          className="w-half max-w-xs rounded-2xl border-2 border-white bg-[#7D7D7D] p-2 text-white placeholder-white focus:outline-none"
+          className="w-80 max-w-xs rounded-xl border-2 border-white bg-[#7D7D7D] p-2 text-white placeholder-white focus:outline-none"
         />
         <div className="mt-2">
           <button
@@ -36,4 +46,4 @@ const Name = () => {
   );
 };
 
-export default Name;
+export default NameInput;

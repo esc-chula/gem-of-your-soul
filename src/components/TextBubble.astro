@@ -10,14 +10,18 @@ interface Props {
 const { name, texts, className } = Astro.props;
 ---
 
-<div class={cn("border-4 border-white h-fit w-80 rounded-xl", className)}>
-  <p class="mb-2.5 ml-2.5 mt-2.5 break-words text-left text-sm">
+<div
+  class={cn(
+    "border-4 border-white h-fit w-80 rounded-xl select-none",
+    className,
+  )}>
+  <div class="mb-2.5 ml-2.5 mt-2.5 break-words text-left text-sm">
     {
-      texts.map((text, index) => (
-        <>
+      texts.map((text) => (
+        <p>
           <span class="font-semibold">{name}</span> : {text}
-        </>
+        </p>
       ))
     }
-  </p>
+  </div>
 </div>

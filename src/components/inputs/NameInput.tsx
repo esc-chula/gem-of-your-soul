@@ -36,7 +36,7 @@ const NameInput = ({ redirectUrl }: { redirectUrl: string }) => {
           <button
             type="submit"
             onClick={handleConfirm}
-            className="w-32 max-w-xs rounded-2xl bg-white p-2 text-black active:bg-black active:text-white"
+            className="w-32 max-w-xs select-none rounded-2xl bg-white p-2 text-black active:bg-black active:text-white"
           >
             ยืนยัน
           </button>

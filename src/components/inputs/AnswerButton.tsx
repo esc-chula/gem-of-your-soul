@@ -1,3 +1,5 @@
+import { userAnswer } from "@/stores/userAnswerStores";
+
 const AnswerButton = ({
   text,
   attribute,
@@ -8,6 +10,10 @@ const AnswerButton = ({
   const handleClick = () => {
     // TODO: Implement stores
     console.log(`You clicked the ${attribute} button!`);
+
+    const currentScoreStr = userAnswer.get()[attribute] || "0";
+    const currentScore = parseInt(currentScoreStr, 10);
+    userAnswer.setKey(attribute, (currentScore + 1).toString());
   };
 
   return (

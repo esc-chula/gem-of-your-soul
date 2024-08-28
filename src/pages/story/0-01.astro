@@ -1,0 +1,11 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+import StartingScene from "@/components/StartingScene";
+---
+
+<BaseLayout>
+  <div class="min-h-screen w-full bg-[#303030]">
+    <StartingScene client:only />
+  </div>
+</BaseLayout>

@@ -1,60 +1,47 @@
 ---
-import "@fontsource/chakra-petch/300.css";
-import "@fontsource/chakra-petch/400.css";
-import "@fontsource/chakra-petch/500.css";
-import "@fontsource/chakra-petch/600.css";
-import "@fontsource/chakra-petch/700.css";
+import cn from "@/utils/cn";
 
-import { ViewTransitions } from "astro:transitions";
+import BaseLayout from "./BaseLayout.astro";
+
 import { Image } from "astro:assets";
+import Redirector from "@/components/Redirector";
 
 interface Props {
-  redirectLink: string;
-  autoRedirectSeconds?: number;
+  title?: string;
+  redirectUrl?: string;
+  redirectInterval?: number;
   image: ImageMetadata;
+  imageLowRes?: ImageMetadata;
+  backgroundColor?: string;
 }
 
-const { redirectLink, autoRedirectSeconds = 0, image } = Astro.props;
-
-if (autoRedirectSeconds > 0) {
-  await new Promise((resolve) =>
-    setTimeout(resolve, autoRedirectSeconds * 1000),
-  );
-}
+const {
+  title,
+  redirectUrl,
+  redirectInterval,
+  image,
+  imageLowRes,
+  backgroundColor,
+} = Astro.props;
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <ViewTransitions />
-    <title>Image Page</title>
-
-    {
-      autoRedirectSeconds > 0 && (
-        <meta
-          http-equiv="refresh"
-          content={`${autoRedirectSeconds};url=${redirectLink}`}
-        />
-      )
-    }
-  </head>
-  <body>
-    <main
-      class="absolute left-1/2 flex min-h-dvh w-full max-w-md -translate-x-1/2 bg-gray-100"
-    >
-      <Image
-        src={image}
-        alt="background"
-        class="absolute -z-50 h-full w-auto"
+<BaseLayout title={title}>
+  <div
+    class={cn(
+      "absolute z-10 h-full w-full bg-cover bg-center",
+      backgroundColor,
+    )}
+    style={`background-image: url(${imageLowRes ? imageLowRes.src : image.src});`}>
+    <Image src={image} alt="background" />
+    <slot />
+  </div>
+  {
+    redirectUrl && redirectInterval && (
+      <Redirector
+        redirectUrl={redirectUrl}
+        redirectInterval={redirectInterval}
+        client:only
       />
-      <slot />
-    </main>
-  </body>
-</html>
-
-<style is:global>
-  body {
-    font-family: "Chakra Petch", sans-serif;
+    )
   }
-</style>
+</BaseLayout>

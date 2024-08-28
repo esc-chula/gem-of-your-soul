@@ -2,6 +2,11 @@
 import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 
 import BackgroundImage from "@/assets/story/scene-0/08.webp";
+import BackgroundLowRes from "@/assets/story/scene-0/08-low.webp";
 ---
 
-<ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage} />
+<ImagePageLayout
+  backgroundColor="bg-[#303030]"
+  image={BackgroundImage}
+  imageLowRes={BackgroundLowRes}
+/>

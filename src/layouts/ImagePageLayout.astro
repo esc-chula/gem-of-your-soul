@@ -3,6 +3,7 @@ import cn from "@/utils/cn";
 
 import BaseLayout from "./BaseLayout.astro";
 
+import { Image } from "astro:assets";
 import Redirector from "@/components/Redirector";
 
 interface Props {
@@ -10,11 +11,18 @@ interface Props {
   redirectUrl?: string;
   redirectInterval?: number;
   image: ImageMetadata;
+  imageLowRes?: ImageMetadata;
   backgroundColor?: string;
 }
 
-const { title, redirectUrl, redirectInterval, image, backgroundColor } =
-  Astro.props;
+const {
+  title,
+  redirectUrl,
+  redirectInterval,
+  image,
+  imageLowRes,
+  backgroundColor,
+} = Astro.props;
 ---
 
 <BaseLayout title={title}>
@@ -23,7 +31,8 @@ const { title, redirectUrl, redirectInterval, image, backgroundColor } =
       "absolute z-10 h-full w-full bg-cover bg-center",
       backgroundColor,
     )}
-    style={`background-image: url(${image.src});`}>
+    style={`background-image: url(${imageLowRes ? imageLowRes.src : image.src});`}>
+    <Image src={image} alt="background" />
     <slot />
   </div>
   {

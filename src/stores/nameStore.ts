@@ -1,3 +1,3 @@
 import { persistentAtom } from '@nanostores/persistent'
 
-export const confirmName = persistentAtom<string>('');
+export const userName = persistentAtom<string>('');

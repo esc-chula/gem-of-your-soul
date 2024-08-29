@@ -2,7 +2,13 @@ import AnswerButton from "./AnswerButton";
 
 import type IAnswer from "@/types/answer";
 
-const AnswerComponent = ({ answers }: { answers: IAnswer[] }) => {
+const AnswerComponent = ({
+  answers,
+  redirectUrl,
+}: {
+  answers: IAnswer[];
+  redirectUrl: string;
+}) => {
   return (
     <div className="absolute bottom-10 flex w-full justify-center">
       <div className="flex flex-col gap-y-2">
@@ -11,6 +17,7 @@ const AnswerComponent = ({ answers }: { answers: IAnswer[] }) => {
             key={idx}
             text={answer.text}
             attribute={answer.attribute}
+            redirectUrl={redirectUrl}
           />
         ))}
       </div>

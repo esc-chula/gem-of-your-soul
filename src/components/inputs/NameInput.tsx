@@ -4,20 +4,24 @@ import { useDebounce } from "@/utils/useDebounce";
 
 import { userName } from "@/stores/userNameStores";
 
+import { toast, Toaster } from "react-hot-toast";
+
 const NameInput = ({ redirectUrl }: { redirectUrl: string }) => {
   const [name, setName] = useState<string>("");
   const debouncedName = useDebounce(name);
 
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setName(e.target.value);
+    if (e.target.value.length <= 20) setName(e.target.value);
   };
 
   const handleConfirm = () => {
-    if (!debouncedName) {
-      // TODO: ADD TOAST
+    const trimmedName = debouncedName.trim();
+    if (!trimmedName) {
+      toast.dismiss();
+      toast.error("ลองใหม่อีกครั้ง");
       return;
     }
-    userName.set(debouncedName);
+    userName.set(trimmedName);
 
     setTimeout(() => {
       window.location.href = redirectUrl;
@@ -27,6 +31,7 @@ const NameInput = ({ redirectUrl }: { redirectUrl: string }) => {
   return (
     <div className="absolute top-0 flex min-h-screen w-full items-end justify-center">
       <div className="mb-12 flex flex-col items-center">
+        <Toaster />
         <input
           type="text"
           value={name}

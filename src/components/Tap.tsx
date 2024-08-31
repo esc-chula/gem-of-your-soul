@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
 
+import cn from "@/utils/cn";
+
 const Tap = ({
   delay,
   redirectUrl,
+  color,
 }: {
   delay: number;
   redirectUrl: string;
+  color?: string;
 }) => {
   const [showTap, setShowTap] = useState<boolean>(false);
 
@@ -22,9 +26,16 @@ const Tap = ({
       {showTap && (
         <a
           href={redirectUrl}
-          className="animate-fade-in absolute bottom-1/4 right-8 z-50 select-none rounded-full bg-yellow-100 bg-opacity-70 p-12 text-black hover:cursor-pointer"
+          className="cursor-pointere absolute inset-0 z-50 bg-opacity-70"
         >
-          Tap
+          <span
+            className={cn(
+              "absolute bottom-[20%] right-10 text-xl font-semibold",
+              color === undefined ? "text-white" : color,
+            )}
+          >
+            กดเพื่อไปต่อ
+          </span>
         </a>
       )}
     </>

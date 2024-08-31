@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import Tap from "./TempTap";
+import Tap from "./Tap";
 
 import Image01 from "@/assets/story/scene-0/01.webp";
 import Image02 from "@/assets/story/scene-0/02.webp";

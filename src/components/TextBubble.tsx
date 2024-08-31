@@ -5,11 +5,11 @@ import { useStore } from "@nanostores/react";
 
 const TextBubble = ({
   name,
-  texts,
+  text,
   className,
 }: {
   name: string;
-  texts: string[];
+  text: string;
   className?: string;
 }) => {
   return (
@@ -20,12 +20,10 @@ const TextBubble = ({
       )}
     >
       <div className="mb-2.5 ml-2.5 mt-2.5 break-words text-left text-sm">
-        {texts.map((text, index) => (
-          <p key={index}>
-            <span className="font-semibold">{makeText(name)}</span> :{" "}
-            {makeText(text)}
-          </p>
-        ))}
+        <p>
+          <span className="font-semibold">{makeText(name)}</span> :{" "}
+          {makeText(text)}
+        </p>
       </div>
     </div>
   );

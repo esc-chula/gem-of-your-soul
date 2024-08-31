@@ -2,6 +2,7 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
 import StartButton from "@/components/start/StartButton.astro";
+import ResetScores from "@/components/start/ResetScores";
 ---
 
 <BaseLayout>
@@ -10,4 +11,5 @@ import StartButton from "@/components/start/StartButton.astro";
       <StartButton />
     </div>
   </main>
+  <ResetScores client:only />
 </BaseLayout>

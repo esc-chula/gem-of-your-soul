@@ -1,13 +1,25 @@
+import { userAnswer } from "@/stores/userAnswerStores";
+
 const AnswerButton = ({
   text,
   attribute,
+  redirectUrl,
 }: {
   text: string;
   attribute: string;
+  redirectUrl: string;
 }) => {
   const handleClick = () => {
     // TODO: Implement stores
     console.log(`You clicked the ${attribute} button!`);
+
+    const currentScoreStr = userAnswer.get()[attribute] || "0";
+    const currentScore = parseInt(currentScoreStr, 10);
+    userAnswer.setKey(attribute, (currentScore + 1).toString());
+
+    setTimeout(() => {
+      window.location.href = redirectUrl;
+    }, 300);
   };
 
   return (

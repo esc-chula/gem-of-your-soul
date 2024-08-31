@@ -11,14 +11,19 @@ const NameInput = ({ redirectUrl }: { redirectUrl: string }) => {
   const debouncedName = useDebounce(name);
 
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.value.length <= 20) setName(e.target.value);
+    setName(e.target.value);
   };
 
   const handleConfirm = () => {
     const trimmedName = debouncedName.trim();
     if (!trimmedName) {
       toast.dismiss();
-      toast.error("ลองใหม่อีกครั้ง");
+      toast.error("กรุณาใส่ชื่อของคุณ");
+      return;
+    }
+    if (trimmedName.length > 20) {
+      toast.dismiss();
+      toast.error("กรุณาตั้งชื่อไม่เกิน 20 ตัวอักษร");
       return;
     }
     userName.set(trimmedName);

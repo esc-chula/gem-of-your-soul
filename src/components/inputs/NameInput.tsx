@@ -4,6 +4,8 @@ import { useDebounce } from "@/utils/useDebounce";
 
 import { userName } from "@/stores/userNameStores";
 
+import { toast, Toaster } from "react-hot-toast";
+
 const NameInput = ({ redirectUrl }: { redirectUrl: string }) => {
   const [name, setName] = useState<string>("");
   const debouncedName = useDebounce(name);
@@ -13,11 +15,18 @@ const NameInput = ({ redirectUrl }: { redirectUrl: string }) => {
   };
 
   const handleConfirm = () => {
-    if (!debouncedName) {
-      // TODO: ADD TOAST
+    const trimmedName = debouncedName.trim();
+    if (!trimmedName) {
+      toast.dismiss();
+      toast.error("กรุณาใส่ชื่อของคุณ");
       return;
     }
-    userName.set(debouncedName);
+    if (trimmedName.length > 20) {
+      toast.dismiss();
+      toast.error("กรุณาตั้งชื่อไม่เกิน 20 ตัวอักษร");
+      return;
+    }
+    userName.set(trimmedName);
 
     setTimeout(() => {
       window.location.href = redirectUrl;
@@ -27,6 +36,7 @@ const NameInput = ({ redirectUrl }: { redirectUrl: string }) => {
   return (
     <div className="absolute top-0 flex min-h-screen w-full items-end justify-center">
       <div className="mb-12 flex flex-col items-center">
+        <Toaster />
         <input
           type="text"
           value={name}

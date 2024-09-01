@@ -1,0 +1,51 @@
+---
+import cn from "@/utils/cn";
+import BaseLayout from "./BaseLayout.astro";
+import { Image } from "astro:assets";
+import Redirector from "@/components/Redirector";
+import { ZoomWrapper } from "@/components/ZoomWarper"; // Adjust import path as needed
+
+interface Props {
+  title?: string;
+  redirectUrl?: string;
+  redirectInterval?: number;
+  image: ImageMetadata;
+  imageLowRes?: ImageMetadata;
+  backgroundColor?: string;
+}
+
+const {
+  title,
+  redirectUrl,
+  redirectInterval,
+  image,
+  imageLowRes,
+  backgroundColor,
+} = Astro.props;
+---
+
+<BaseLayout title={title}>
+  <ZoomWrapper>
+    <>
+      <div
+        class={cn(
+          "absolute z-10 h-full w-full bg-cover bg-center",
+          backgroundColor,
+        )}
+        style={`background-image: url(${imageLowRes ? imageLowRes.src : image.src});`}
+      >
+        <Image src={image} alt="background" class="h-auto w-full" />
+        <slot />
+      </div>
+      {
+        redirectUrl && redirectInterval && (
+          <Redirector
+            redirectUrl={redirectUrl}
+            redirectInterval={redirectInterval}
+            client:only
+          />
+        )
+      }
+    </>
+  </ZoomWrapper>
+</BaseLayout>

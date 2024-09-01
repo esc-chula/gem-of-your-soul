@@ -1,16 +1,23 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "jsx": "react-jsx",
-    "jsxImportSource": "react",
+    "jsx": "react-jsx", // Enable JSX support for React
+    "jsxImportSource": "react", // Specify React as the JSX import source
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"] // Alias configuration
     },
-    "baseUrl": ".",
+    "baseUrl": ".", // Set base URL for module resolution
     "plugins": [
       {
-        "name": "@astrjs/ts-plugin"
+        "name": "@astrojs/ts-plugin" // Corrected plugin name
       }
-    ]
-  }
+    ],
+    "moduleResolution": "node", // Ensure Node module resolution
+    "strict": true, // Enforce strict type checking
+    "esModuleInterop": true, // Enable ES module interoperability
+    "allowSyntheticDefaultImports": true, // Allow default imports from modules with no default export
+    "skipLibCheck": true // Skip type checking of declaration files for faster builds
+  },
+  "include": ["src/**/*"], // Include all files in the src directory
+  "exclude": ["node_modules"] // Exclude node_modules from type checking
 }

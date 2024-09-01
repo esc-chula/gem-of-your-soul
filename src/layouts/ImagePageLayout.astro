@@ -5,6 +5,7 @@ import BaseLayout from "./BaseLayout.astro";
 
 import { Image } from "astro:assets";
 import Redirector from "@/components/Redirector";
+
 interface Props {
   title?: string;
   redirectUrl?: string;
@@ -27,11 +28,12 @@ const {
 <BaseLayout title={title}>
   <div
     class={cn(
-      "absolute h-full w-full bg-cover bg-center",
+      "absolute z-10 h-full w-full bg-cover bg-center",
       backgroundColor,
     )}
-    style={`background-image: url(${imageLowRes ? imageLowRes.src : image.src});`}>
-    <Image src={image} alt="background" class="w-full h-auto" />
+    style={`background-image: url(${imageLowRes ? imageLowRes.src : image.src});`}
+  >
+    <Image src={image} alt="background" />
     <slot />
   </div>
   {
@@ -43,5 +45,4 @@ const {
       />
     )
   }
-  </>
 </BaseLayout>

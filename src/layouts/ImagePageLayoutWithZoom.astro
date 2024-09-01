@@ -1,10 +1,10 @@
 ---
 import cn from "@/utils/cn";
-
 import BaseLayout from "./BaseLayout.astro";
-
 import { Image } from "astro:assets";
 import Redirector from "@/components/Redirector";
+import { ZoomWrapper } from "@/components/ZoomWarper"; // Adjust import path as needed
+
 interface Props {
   title?: string;
   redirectUrl?: string;
@@ -25,13 +25,15 @@ const {
 ---
 
 <BaseLayout title={title}>
+  <ZoomWrapper>
+  <>
   <div
     class={cn(
-      "absolute h-full w-full bg-cover bg-center",
+      "absolute z-10 h-full w-full bg-cover bg-center",
       backgroundColor,
     )}
     style={`background-image: url(${imageLowRes ? imageLowRes.src : image.src});`}>
-    <Image src={image} alt="background" class="w-full h-auto" />
+    <Image src={image} alt="background" class="w-full h-auto"/>
     <slot />
   </div>
   {
@@ -44,4 +46,5 @@ const {
     )
   }
   </>
+  </ZoomWrapper>
 </BaseLayout>

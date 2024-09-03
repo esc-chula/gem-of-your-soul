@@ -9,6 +9,8 @@ export default {
         user: "#FF8B74",
         beaver: "#D7925A",
         bull: "#95BDEC",
+        engine: "#E1FFFE",
+        darkness: "#6932CA",
       },
       keyframes: {
         "fade-in": {

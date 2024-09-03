@@ -1,0 +1,19 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+
+import Tap from "@/components/Tap";
+import TextBubble from "@/components/TextBubble";
+
+import BackgroundImage from "@/assets/story/scene-3/02.webp";
+---
+
+<ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
+  <div class="absolute top-20 flex w-full justify-center">
+    <TextBubble
+      name="ชาไทย"
+      text={"นั่น ลองเข้าไปขอความช่วยเหลือเรื่องสัญญาณจาก “Engine” ผู้ดูแลศูนย์ปฏิบัติการแห่งนี้ กันดีกว่า"}
+      className="bg-chathai"
+    />
+  </div>
+  <Tap delay={0.5} redirectUrl="/story/3-03" client:load />
+</ImagePageLayout>

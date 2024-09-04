@@ -29,9 +29,9 @@ const MuteButton = () => {
       <img
         className="h-10 w-10"
         src={
-          mute ? "src/assets/ui/muteIcon.png" : "src/assets/ui/unmuteIcon.png"
+          mute ? "/src/assets/ui/muteIcon.png" : "/src/assets/ui/unmuteIcon.png"
         }
-        alt={mute ? "unmute button" : "mute button"}
+        alt={mute ? "mute" : "unmute"}
       />
     </div>
   );

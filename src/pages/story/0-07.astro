@@ -5,9 +5,11 @@ import TextBubble from "@/components/TextBubble";
 import NameInput from "@/components/inputs/NameInput";
 
 import BackgroundImage from "@/assets/story/scene-0/12.webp";
+import MuteButton from '@/components/MuteButton'
 ---
 
 <ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
+  <MuteButton client:load />
   <div class="absolute top-20 flex w-full justify-center">
     <TextBubble
       name="ชาไทย"

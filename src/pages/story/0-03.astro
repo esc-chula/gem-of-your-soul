@@ -5,6 +5,8 @@ import Tap from "@/components/Tap";
 
 import BackgroundImage from "@/assets/story/scene-0/08.webp";
 import BackgroundLowRes from "@/assets/story/scene-0/08-low.webp";
+import MuteButton from '@/components/MuteButton'
+
 ---
 
 <ImagePageLayout
@@ -12,5 +14,6 @@ import BackgroundLowRes from "@/assets/story/scene-0/08-low.webp";
   image={BackgroundImage}
   imageLowRes={BackgroundLowRes}
 >
+  <MuteButton client:load />
   <Tap delay={0.5} redirectUrl="/story/0-04" client:load />
 </ImagePageLayout>

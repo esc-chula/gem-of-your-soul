@@ -40,7 +40,7 @@ const StartingScene = () => {
         }}
         className="absolute z-0"
       />
-      {lastImage && <Tap delay={0.5} redirectUrl="/story/0-03" />}
+      {lastImage && <Tap delay={0.5} redirectUrl="/story/0-02" />}
     </>
   );
 };

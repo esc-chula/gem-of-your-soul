@@ -1,0 +1,18 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+
+import BackgroundImage from "@/assets/story/scene-2/2-19.webp";
+import TextBubble from "@/components/TextBubble";
+import Tap from "@/components/Tap";
+---
+
+<ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
+  <div class="absolute top-20 flex w-full justify-center">
+    <TextBubble
+      name="กระทิงเบ๊"
+      text={"จู่ ๆ ใบพัดก็หมุนแรงมาก เราควรทำยังไงกันดี"}
+      className="bg-bull"
+    />
+  </div>
+  <Tap delay={0.5} redirectUrl="/story/2-18-2" client:load />
+</ImagePageLayout>

@@ -1,0 +1,31 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+
+import BackgroundImage from "@/assets/story/scene-2/2-11.webp";
+import Tap from "@/components/Tap";
+import TextBubble from "@/components/TextBubble";
+import AnswerComponent from "@/components/inputs/AnswerComponent";
+---
+
+<ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
+  <div class="absolute top-20 flex w-full justify-center">
+    <TextBubble
+      name="ชาไทย"
+      text={"โรงงานนี้ใหญ่เลยมีระบบที่หลากหลาย เธออยากไปดูงานส่วนไหน"}
+      className="bg-chathai"
+    />
+  </div>
+  <AnswerComponent
+    answers={[
+      { text: "การวิจัยพัฒนาระบบภายใน", attribute: "Ni" },
+      { text: "ประกอบชิ้นส่วนเครื่องบิน", attribute: "Se" },
+      { text: "ควบคุมการผลิต ระบบโรงงาน", attribute: "Si" },
+      {
+        text: "โปรเจกต์ออกแบบฟังก์ชั่นใหม่",
+        attribute: "Ne",
+      },
+    ]}
+    redirectUrl="/story/2-11"
+    client:only
+  />
+</ImagePageLayout>

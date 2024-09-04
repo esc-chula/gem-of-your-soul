@@ -3,8 +3,6 @@ import { useState } from "react";
 const MuteButton = () => {
   const [mute, setMute] = useState<boolean>(false);
   const handleClick = () => {
-    console.log("sdsfdfasg");
-
     setMute((prev) => !prev);
   };
 
@@ -16,9 +14,7 @@ const MuteButton = () => {
       <img
         className="h-10 w-10"
         src={
-          mute
-            ? "src/assets/ui/unmuteButton.png"
-            : "src/assets/ui/muteButton.png"
+          mute ? "src/assets/ui/unmuteIcon.png" : "src/assets/ui/muteIcon.png"
         }
         alt={mute ? "unmute button" : "mute button"}
       />

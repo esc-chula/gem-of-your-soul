@@ -1,0 +1,30 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+
+import AnswerComponent from "@/components/inputs/AnswerComponent";
+import TextBubble from "@/components/TextBubble";
+
+import BackgroundImage from "@/assets/story/scene-3/06.webp";
+---
+
+<ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
+  <div class="absolute top-20 flex w-full justify-center">
+    <TextBubble
+      name="Engine"
+      text={"เธออยากทำตำแหน่งไหนในงานนี้ไหม ?"}
+      className="bg-engine"
+      client:only
+    />
+  </div>
+
+  <AnswerComponent
+    answers={[
+      { text: "แบ่งงาน ดูภาพรวม เป็นคนตัดสินใจ", attribute: "A" },
+      { text: "ผู้ช่วยฝ่ายเทคนิค คิดวิธีแก้ปัญหา", attribute: "B" },
+      { text: "ฝ่ายประสานงาน สื่อสารกับทุกคน", attribute: "C" },
+      { text: "เป็นที่ปรึกษา ใครมีปัญหาขอให้บอก", attribute: "D" },
+    ]}
+    redirectUrl="/story/3-09"
+    client:only
+  />
+</ImagePageLayout>

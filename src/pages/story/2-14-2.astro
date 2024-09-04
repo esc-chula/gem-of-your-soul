@@ -8,9 +8,14 @@ import TextBubble from "@/components/TextBubble";
 
 <ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
   <div class="absolute top-20 flex w-full justify-center">
-    <div class="mb-12 flex flex-col items-center space-y-3">
+    <div class="mb-12 flex flex-col items-center gap-3">
       <TextBubble name="???" text={"ฮี่ฮี่ฮี่"} className="bg-darkness" />
-      <TextBubble name="%USERNAME%" text={"ใครน่ะ!!!"} className="bg-user" />
+      <TextBubble
+        name="%USERNAME%"
+        text={"ใครน่ะ!!!"}
+        className="bg-user"
+        client:only
+      />
     </div>
   </div>
   <Tap delay={0.5} redirectUrl="/story/2-15" client:load />

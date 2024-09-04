@@ -10,8 +10,9 @@ import Tap from "@/components/Tap";
   <div class="absolute top-20 flex w-full justify-center">
     <TextBubble
       name="กระทิงกล้ามโต"
-      text={"ในที่สุดมันก็กลับมาปกติ ขอบใจอีกครั้งนะ %USERNAME%"}
+      text={"ในที่สุดมันก็กลับมาปกติ ขอบใจอีกครั้งนะ %USERNAME% "}
       className="bg-bull"
+      client:only
     />
   </div>
   <Tap delay={0.5} redirectUrl="/story/2-20-1" color="text-black" client:load />

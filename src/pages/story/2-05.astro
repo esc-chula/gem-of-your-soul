@@ -1,0 +1,32 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+
+import Tap from "@/components/Tap";
+
+import BackgroundImage from "@/assets/story/scene-2/2-04.webp";
+import TextBubble from "@/components/TextBubble";
+import AnswerComponent from "@/components/inputs/AnswerComponent";
+---
+
+<ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
+  <div class="absolute top-20 flex w-full justify-center">
+    <TextBubble
+      name="กระทิงกล้ามโต"
+      text={"วันนี้ต้องขนชิ้นส่วนไปประกอบเยอะมากเลย สายพานก็ดันมาเสียอีก"}
+      className="bg-bull"
+    />
+  </div>
+  <AnswerComponent
+    answers={[
+      { text: "เรามาลงมือขนเองเลยเถอะ จะได้ไม่เสียเวลา", attribute: "Se" },
+      { text: "สายพานเสียหรอ ลองซ่อมดูก่อนละกัน", attribute: "Si" },
+      { text: "ฉันเห็นรถเข็นตรงทางเข้า เราไปเอามาใช้ดีไหม!", attribute: "Ni" },
+      {
+        text: "ที่นี่เป็นโรงงานเครื่องบิน เอามาใช้ขนของสักลำสิ !",
+        attribute: "Ne",
+      },
+    ]}
+    redirectUrl="/story/2-06"
+    client:only
+  />
+</ImagePageLayout>

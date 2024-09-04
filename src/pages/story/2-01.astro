@@ -1,0 +1,11 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+
+import Tap from "@/components/Tap";
+
+import BackgroundImage from "@/assets/story/scene-2/2-01.webp";
+---
+
+<ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
+  <Tap delay={0.5} redirectUrl="/story/2-02" color="text-black" client:load />
+</ImagePageLayout>

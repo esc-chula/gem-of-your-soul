@@ -1,7 +1,31 @@
 ---
 import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 
-import BackgroundImage from "@/assets/story/scene-2/2-22.webp";
+import BackgroundImage from "@/assets/story/scene-2/2-17.webp";
+import TextBubble from "@/components/TextBubble";
+import Tap from "@/components/Tap";
+import AnswerComponent from "@/components/inputs/AnswerComponent";
 ---
 
-<ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage} />
+<ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
+  <div class="absolute top-20 flex w-full justify-center">
+    <TextBubble
+      name="กระทิงกล้ามโต"
+      text={"แย่แล้วล่ะ โรงงานเราไม่เคยเกิดอะไรแบบนี้ขึ้นนะ"}
+      className="bg-bull"
+    />
+  </div>
+  <AnswerComponent
+    answers={[
+      { text: "แน่ใจนะว่าไม่มีใครแอบเปิดใบพัดตอนไฟดับน่ะ", attribute: "Ti" },
+      { text: "ต้องเข้าไปดูแล้วล่ะ ก่อนที่สถานการณ์จะแย่ลง", attribute: "Te" },
+      { text: "ทุกคนใจเย็น ๆ ก่อน อย่าเพิ่งตกใจไปนะ", attribute: "Fe" },
+      {
+        text: "อุตส่าห์ได้ทำงานที่สนใจ เสียดายจัง",
+        attribute: "Fi",
+      },
+    ]}
+    redirectUrl="/story/2-17-1"
+    client:only
+  />
+</ImagePageLayout>

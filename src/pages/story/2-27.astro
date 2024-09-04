@@ -1,7 +1,7 @@
 ---
 import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 
-import BackgroundImage from "@/assets/story/scene-2/2-17.webp";
+import BackgroundImage from "@/assets/story/scene-2/2-20.webp";
 import TextBubble from "@/components/TextBubble";
 import Tap from "@/components/Tap";
 ---
@@ -10,9 +10,10 @@ import Tap from "@/components/Tap";
   <div class="absolute top-20 flex w-full justify-center">
     <TextBubble
       name="กระทิงกล้ามโต"
-      text={"แย่แล้วล่ะ โรงงานเราไม่เคยเกิดอะไรแบบนี้ขึ้นนะ"}
+      text={"ในที่สุดมันก็กลับมาปกติ ขอบใจอีกครั้งนะ %USERNAME% "}
       className="bg-bull"
+      client:only
     />
   </div>
-  <Tap delay={0.5} redirectUrl="/story/2-16-2" client:load />
+  <Tap delay={0.5} redirectUrl="/story/2-20-1" color="text-black" client:load />
 </ImagePageLayout>

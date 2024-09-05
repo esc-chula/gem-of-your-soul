@@ -1,0 +1,19 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+
+import Tap from "@/components/Tap";import TextBubble from "@/components/TextBubble";
+
+import BackgroundImage from "@/assets/story/scene-3/07.webp";
+---
+
+<ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
+  <div class="absolute top-20 flex w-full justify-center">
+    <TextBubble
+      name="Engine"
+      text={"โอ้ เยี่ยมไปเลย ! งั้นเรามาเริ่มกันเลยดีกว่า"}
+      className="bg-engine"
+      client:only
+    />
+  </div>
+  <Tap delay={0.5} redirectUrl="/story/3-10" client:load />
+</ImagePageLayout>

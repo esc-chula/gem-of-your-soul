@@ -1,0 +1,19 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+
+import Tap from "@/components/Tap";
+import TextBubble from "@/components/TextBubble";
+
+import BackgroundImage from "@/assets/story/scene-3/03.webp";
+---
+
+<ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
+  <div class="absolute top-20 flex w-full justify-center">
+    <TextBubble
+      name="%USERNAME%"
+      text={"ช่วยด้วย เกิดปัญหาใหญ่ขึ้นแล้ว!"}
+      className="bg-user"
+    />
+  </div>
+  <Tap delay={0.5} redirectUrl="/story/3-04" client:load />
+</ImagePageLayout>

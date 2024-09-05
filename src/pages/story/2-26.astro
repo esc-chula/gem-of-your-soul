@@ -1,0 +1,25 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+
+import BackgroundImage from "@/assets/story/scene-2/2-19.webp";
+import TextBubble from "@/components/TextBubble";
+import AnswerComponent from "@/components/inputs/AnswerComponent";
+---
+
+<ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
+  <div class="absolute top-20 flex w-full justify-center">
+    <TextBubble
+      name="กระทิงเบ๊"
+      text={"จู่ ๆ ใบพัดก็หมุนแรงมาก เราควรทำยังไงกันดี"}
+      className="bg-bull"
+    />
+  </div>
+  <AnswerComponent
+    answers={[
+      { text: "ระบบควบคุมเสียแน่เลย ต้องหาสาเหตุแล้วล่ะ", attribute: "P" },
+      { text: "ใครทำพังรึเปล่า มีช่างที่สามารถซ่อมมันได้ไหม", attribute: "J" },
+    ]}
+    redirectUrl="/story/2-27"
+    client:only
+  />
+</ImagePageLayout>

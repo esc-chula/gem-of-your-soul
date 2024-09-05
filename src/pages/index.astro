@@ -2,13 +2,11 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
 import TextBubble from "@/components/TextBubble";
-import MuteButton from '@/components/MuteButton'
 
 ---
 
 <BaseLayout>
   <div class="flex h-screen w-full flex-col items-center justify-center">
-    <MuteButton client:load />
     <TextBubble
       name="Larngear Dev"
       text={"Hello World!"}

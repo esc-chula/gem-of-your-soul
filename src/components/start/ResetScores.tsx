@@ -1,10 +1,8 @@
-import { useStore } from "@nanostores/react";
-
-import { userAnswer } from "@/stores/userAnswerStores";
+import { settings } from "@/stores/settingsStores";
 
 const ResetScores = () => {
-  const answers = useStore(userAnswer);
-  // TODO: RESET SCORE
+  settings.setKey("mute", "false");
+  // TODO: RESET SCORES
   return null;
 };
 

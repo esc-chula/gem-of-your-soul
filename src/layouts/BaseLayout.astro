@@ -7,6 +7,8 @@ import "@fontsource/chakra-petch/700.css";
 
 import { ViewTransitions } from "astro:transitions";
 
+import MuteButton from "@/components/MuteButton";
+
 interface Props {
   title?: string;
 }
@@ -26,8 +28,8 @@ const { title = "Astro APP" } = Astro.props;
   </head>
   <body>
     <main
-      class="absolute left-1/2 -z-50 flex min-h-dvh w-full max-w-md -translate-x-1/2 overflow-hidden bg-gray-100"
-    >
+      class="absolute left-1/2 -z-50 flex min-h-dvh w-full max-w-md -translate-x-1/2 overflow-hidden bg-gray-100">
+      <MuteButton client:load />
       <slot />
     </main>
   </body>

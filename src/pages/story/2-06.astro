@@ -1,0 +1,19 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+
+import Tap from "@/components/Tap";
+import TextBubble from "@/components/TextBubble";
+
+import BackgroundImage from "@/assets/story/scene-2/2-06.webp";
+---
+
+<ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
+  <div class="absolute top-20 flex w-full justify-center">
+    <TextBubble
+      name="กระทิงกล้ามโต (ยิ้ม)"
+      text={"เป็นความคิดที่ดี !"}
+      className="bg-bull"
+    />
+  </div>
+  <Tap delay={0.5} redirectUrl="/story/2-07" color="text-black" client:load />
+</ImagePageLayout>

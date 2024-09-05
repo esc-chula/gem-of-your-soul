@@ -1,0 +1,18 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+
+import Tap from "@/components/Tap";
+
+import BackgroundImage from "@/assets/story/scene-3/16.webp";
+---
+
+<ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
+  <div class="absolute top-20 flex w-full justify-center">
+    <div class="h-fit w-80 select-none rounded-xl border-4 bg-white border-white">
+        <div class="mb-2.5 ml-2.5 mt-2.5 break-words text-center font-semibold text-sm">
+            <p>แสงจากอัญมณีทำให้ความมืดมีขนาดเล็กลงเรื่อยๆ จนสลายไปในที่สุด</p>
+      </div>
+    </div>
+  </div>
+  <Tap delay={0.5} redirectUrl="/story/3-23" client:load />
+</ImagePageLayout>

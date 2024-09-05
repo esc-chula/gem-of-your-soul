@@ -2,17 +2,20 @@
 import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 
 import Tap from "@/components/Tap";
+import TextBubble from "@/components/TextBubble";
 
-import BackgroundImage from "@/assets/story/scene-4/04.webp";
+import BackgroundImage from "@/assets/story/scene-4/09.webp";
 ---
 
 <ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
   <div class="absolute top-20 flex w-full justify-center">
-    <div class="h-fit w-80 select-none rounded-xl bg-white">
-        <div class="mb-2.5 ml-2.5 mt-2.5 break-words text-left text-sm">
-            <p>"ท่ามกลางแสงสีขาวที่ค่อยๆสว่างขึ้นมา คุณก้มมองอัญมนีบนสร้อยอีกครั้ง"</p>
-      </div>
+    <div class="mb-12 flex flex-col items-center">
+        <TextBubble
+        name="ชาไทย"
+        text={"ดีใจที่ได้พบกัน เราจะคอยเป็นกำลังใจให้เธอนะ"}
+        className="bg-chathai"
+        />
     </div>
   </div>
-  <Tap delay={0.5} redirectUrl="/story/4-14" client:load />
+  <Tap delay={0.5} redirectUrl="/story/4-15" client:load />
 </ImagePageLayout>

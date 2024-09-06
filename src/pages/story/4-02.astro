@@ -1,0 +1,20 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+
+import BackgroundImage from "@/assets/story/scene-4/01.webp";
+import AnswerComponent from "@/components/inputs/AnswerComponent";
+---
+
+<ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
+  <AnswerComponent
+    answers={[
+      { text: "ที่นี่สวรรค์หรอ ทำไมมันขาวโพลนจัง…", attribute: "A" },
+      { text: "เรามาอยู่ที่นี่ได้ไง ในโลกนี้วาร์ปได้ด้วยหรอ", attribute: "B" },
+      { text: "แสบตาเป็นบ้าเลย ลดแสงลงหน่อยได้ไหม", attribute: "C" },
+      { text: "แล้วชาไทยเป็นไงบ้าง เมื่อกี้เป็นอะไรไปรึเปล่า", attribute: "D" },
+    ]}
+    redirectUrl="/story/4-03"
+    client:only
+    center
+  />
+</ImagePageLayout>

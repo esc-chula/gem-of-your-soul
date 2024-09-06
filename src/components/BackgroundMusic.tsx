@@ -1,8 +1,10 @@
-import Music from "@/assets/song/scene0.webm";
-import { settings } from "@/stores/settingsStores";
 import { useStore } from "@nanostores/react";
 import { Howl } from "howler";
 import { useEffect } from "react";
+
+import { settings } from "@/stores/settingsStores";
+
+import Music from "@/assets/song/scene0.webm";
 
 const sound = new Howl({
   src: Music,
@@ -15,6 +17,7 @@ const sound = new Howl({
     });
   },
 });
+
 const BackgroundMusic = (): JSX.Element => {
   const playing = sound?.playing();
   const muteState = useStore(settings);

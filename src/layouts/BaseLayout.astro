@@ -8,6 +8,7 @@ import "@fontsource/chakra-petch/700.css";
 import { ViewTransitions } from "astro:transitions";
 
 import MuteButton from "@/components/MuteButton";
+import BackgroundMusic from "@/components/BackgroundMusic";
 
 interface Props {
   title?: string;
@@ -32,6 +33,7 @@ const { title = "Gem of Your Soul" } = Astro.props;
       <MuteButton client:load />
       <slot />
     </main>
+    <BackgroundMusic client:load />
   </body>
 </html>
 

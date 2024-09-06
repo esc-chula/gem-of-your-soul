@@ -34,4 +34,5 @@ const BackgroundMusic = (): JSX.Element => {
 
   return <></>;
 };
+
 export default BackgroundMusic;

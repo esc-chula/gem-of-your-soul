@@ -1,0 +1,22 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header from "@/components/landing/Header";
+import CatCard from "@/components/landing/CatCard";
+import ShopCard from "@/components/landing/ShopCard";
+import Footer from "@/components/landing/Footer";
+---
+
+<BaseLayout>
+  <div class="bg-base-01 mx-auto flex max-w-lg flex-col items-center">
+    {/* Header */}
+    <Header />
+
+    <!-- Card Section -->
+    <CatCard />
+    <!-- Shop Section -->
+    <ShopCard />
+
+    <!-- Footer Section -->
+    <Footer />
+  </div>
+</BaseLayout>

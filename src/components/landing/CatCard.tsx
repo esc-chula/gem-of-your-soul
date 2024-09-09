@@ -2,7 +2,10 @@ import CatImage from "@/assets/landing/catcard.webp";
 
 export default function CatCard() {
   return (
-    <a className="relative mb-6 flex h-[252px] w-[358px] flex-col justify-end rounded-[15px] p-6 shadow-lg transition hover:scale-105 hover:cursor-pointer">
+    <a
+      href="/story/start"
+      className="relative mb-6 flex h-[252px] w-[358px] flex-col justify-end rounded-[15px] p-6 shadow-lg transition hover:scale-105 hover:cursor-pointer"
+    >
       <img
         src={CatImage.src}
         alt="Cat"

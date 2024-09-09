@@ -1,0 +1,30 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+
+import Tap from "@/components/Tap";
+
+import BackgroundImage from "@/assets/story/ios.webp";
+import Ios1Image from "@/assets/story/ios-1.webp";
+import Ios2Image from "@/assets/story/ios-2.webp";
+
+---
+
+<ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
+    <div class="absolute top-20 flex flex-col w-full justify-center text-center items-center space-y-12">
+        <h2 class="text-lg font-bold">สำหรับผู้ใช้งาน iOS</h2>
+        <div class="h-20 w-80">
+            <div class="bg-black bg-opacity-20 object-fill rounded-xl"><p class="text-lg relative z-10 p-4 text-opacity-100">เพื่อสัมผัสประสบการณ์ได้อย่างเต็มที่<br>ขอแนะนำให้<b>ใช้งานบนมือถือ</b><br>เปิดผ่าน safari และซ่อนแถบมือถือ</p></div>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <div class="flex flex-row items-start space-x-2">
+                <p><b>1.</b></p>
+                <img src={Ios1Image.src} />
+            </div>
+            <div class="flex flex-row items-start space-x-2">
+                <p><b>2.</b></p>
+                <img src={Ios2Image.src} />
+            </div>
+        </div>
+    </div>
+    <Tap delay={0.5} redirectUrl="/story/start" client:load />
+</ImagePageLayout>

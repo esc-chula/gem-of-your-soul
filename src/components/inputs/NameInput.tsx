@@ -10,7 +10,7 @@ const NameInput = ({ redirectUrl }: { redirectUrl: string }) => {
   const [name, setName] = useState<string>("");
   const debouncedName = useDebounce(name);
 
-  const handleNameChange = (e: React.ChangeEvent) => {
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
   };
 

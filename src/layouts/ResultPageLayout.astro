@@ -9,7 +9,7 @@ import InstagramIcon from "@/assets/result/instagram.svg";
 import IntaniaShopCenterImg from "@/assets/result/intaniashop-center.png";
 import IntaniaShopSideImg from "@/assets/result/intaniashop-side.png";
 import TiktokIcon from "@/assets/result/tiktok.svg";
-import ContactLink from "./contactLink.astro";
+import ContactLink from "@/components/result/contactLink.astro";
 
 interface Props {
   title: string;
@@ -54,16 +54,19 @@ const { title, bgColor, backgroundImage, secondaryColor } = Astro.props;
       <div class="mb-12 flex flex-col items-center justify-center gap-3">
         <ContactLink
           text="LarnGear Camp"
+          alt="Facebook icon"
           imgSrc={FacebookIcon}
           url="https://www.facebook.com/LARNGEARCAMP"
         />
         <ContactLink
           text="@larngear_camp"
+          alt="Instagram icon"
           imgSrc={InstagramIcon}
           url="https://www.instagram.com/larngear_camp/"
         />
         <ContactLink
           text="@larngear_camp"
+          alt="Tiktok icon"
           imgSrc={TiktokIcon}
           url="https://www.tiktok.com/@larngear_camp"
         />

@@ -13,7 +13,7 @@ import AnswerComponent from "@/components/inputs/AnswerComponent";
       name="%USERNAME%"
       text={"ทำไมตรงนั้นดูวุ่น ๆ นะ สงสัยจะมีปัญหาแน่เลย"}
       className="bg-user"
-      client:only
+      client:only="react"
     />
   </div>
 
@@ -21,10 +21,13 @@ import AnswerComponent from "@/components/inputs/AnswerComponent";
     answers={[
       { text: "ทำยังไงให้งานออกมาสมบูรณ์", attribute: "A" },
       { text: "รีบเข้าไปช่วยดีกว่า งานจะได้เสร็จไวๆ", attribute: "B" },
-      { text: "พวกเขาน่าจะต้องการความช่วยเหลือนะ เข้าไปช่วยดีกว่า", attribute: "C" },
+      {
+        text: "พวกเขาน่าจะต้องการความช่วยเหลือนะ เข้าไปช่วยดีกว่า",
+        attribute: "C",
+      },
       { text: "น่าสนใจจัง เข้าไปดูดีกว่า", attribute: "D" },
     ]}
     redirectUrl="/story/1-04"
-    client:only
+    client:only="react"
   />
 </ImagePageLayout>

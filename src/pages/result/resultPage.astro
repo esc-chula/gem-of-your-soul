@@ -10,6 +10,7 @@ import IntaniaShopCenterImg from "@/assets/result/intaniashop-center.png";
 import IntaniaShopSideImg from "@/assets/result/intaniashop-side.png";
 import TiktokIcon from "@/assets/result/tiktok.svg";
 import ContactLink from "./contactLink.astro";
+import cn from "@/utils/cn";
 
 interface Props {
   title: string;
@@ -22,7 +23,7 @@ const { title, bgColor, backgroundImage, secondaryColor } = Astro.props;
 ---
 
 <BaseLayout title={title}>
-  <div class={`min-h-max w-dvw" bg-[${bgColor}]`}>
+  <div class="min-h-max w-dvw" style=`background-color: ${bgColor}`>
     <Image src={backgroundImage} alt="background" />
     <div class="px-[42px]">
       <div class="flex w-full justify-center gap-4">

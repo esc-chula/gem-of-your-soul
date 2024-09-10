@@ -33,7 +33,7 @@ const {
     )}
     style={`background-image: url(${imageLowRes ? imageLowRes.src : image.src});`}
   >
-    <Image src={image} alt="background" class="h-full w-full object-cover" />
+    <Image src={image} alt="background" />
     <slot />
   </div>
   {
@@ -41,7 +41,7 @@ const {
       <Redirector
         redirectUrl={redirectUrl}
         redirectInterval={redirectInterval}
-        client:only="react"
+        client:only
       />
     )
   }

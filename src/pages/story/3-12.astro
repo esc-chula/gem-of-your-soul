@@ -1,8 +1,7 @@
 ---
 import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 
-import Tap from "@/components/Tap";
-import TextBubble from "@/components/TextBubble";
+import Tap from "@/components/Tap";import TextBubble from "@/components/TextBubble";
 
 import BackgroundImage from "@/assets/story/scene-3/09.webp";
 ---
@@ -10,18 +9,18 @@ import BackgroundImage from "@/assets/story/scene-3/09.webp";
 <ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
   <div class="absolute top-20 flex w-full justify-center">
     <div class="mb-12 flex flex-col items-center">
-      <TextBubble
+        <TextBubble
         name="Engine"
         text={"ยะ . . . แย่แล้ว ! คอมดับ ทำยังไงดี !!!"}
         className="bg-engine"
-        client:only="react"
-      />
-      <TextBubble
+        client:only
+        />
+        <TextBubble
         name="%USERNAME%"
         text={"งั้นลอง . . ."}
         className="bg-user"
-        client:only="react"
-      />
+        client:only
+        />
     </div>
   </div>
   <Tap delay={0.5} redirectUrl="/story/3-13" client:load />

@@ -8,23 +8,21 @@ import BackgroundImage from "@/assets/story/scene-3/14.webp";
 
 <ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
   <div class="absolute top-20 flex w-full justify-center">
-    <div
-      class="h-fit w-80 select-none rounded-xl border-4 border-white bg-white">
-      <div
-        class="mb-2.5 ml-2.5 mt-2.5 break-words text-center text-sm font-semibold">
-        <p>ตอนนี XXX เลือกที่จะ . . .</p>
+    <div class="h-fit w-80 select-none rounded-xl border-4 bg-white border-white">
+        <div class="mb-2.5 ml-2.5 mt-2.5 break-words text-center font-semibold text-sm">
+            <p>ตอนนี XXX เลือกที่จะ . . . </p>
       </div>
     </div>
   </div>
 
   <AnswerComponent
     answers={[
-      { text: "รีบบอกให้ชาไทยกระโดดหลบ", attribute: "Te" },
-      { text: "มองหาวิธีต่อกรกับความมืด", attribute: "Ti" },
-      { text: "บอกทุกคนให้ช่วยปกป้องชาไทย", attribute: "Fe" },
-      { text: "พยายามคุยกับความมืด", attribute: "Fi" },
+      { text: "รีบบอกให้ชาไทยกระโดดหลบ", attribute: "A" },
+      { text: "มองหาวิธีต่อกรกับความมืด", attribute: "B" },
+      { text: "บอกทุกคนให้ช่วยปกป้องชาไทย", attribute: "C" },
+      { text: "พยายามคุยกับความมืด", attribute: "D" },
     ]}
     redirectUrl="/story/3-21"
-    client:only="react"
+    client:only
   />
 </ImagePageLayout>

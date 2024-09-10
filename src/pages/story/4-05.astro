@@ -10,12 +10,12 @@ import BackgroundImage from "@/assets/story/scene-4/03.webp";
 <ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
   <div class="absolute top-20 flex w-full justify-center">
     <div class="mb-12 flex flex-col items-center">
-      <TextBubble
+        <TextBubble
         name="%USERNAME%"
         text={"ชาไทยบาดเจ็บอะไรไหม"}
         className="bg-user"
-        client:only="react"
-      />
+        client:only
+        />
     </div>
   </div>
   <Tap delay={0.5} redirectUrl="/story/4-06" client:load />

@@ -1,7 +1,7 @@
 ---
 import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 
-import Tap from "@/components/Tap";
+// import Tap from "@/components/Tap";
 
 import BackgroundImage from "@/assets/story/scene-3/17.webp";
 ---
@@ -9,14 +9,11 @@ import BackgroundImage from "@/assets/story/scene-3/17.webp";
 <ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
   <div class="absolute top-20 flex w-full justify-center">
     <div
-      class="h-fit w-80 select-none rounded-xl border-4 border-white bg-white"
-    >
+      class="h-fit w-80 select-none rounded-xl border-4 border-white bg-white">
       <div
-        class="mb-2.5 ml-2.5 mt-2.5 break-words text-center text-sm font-semibold"
-      >
+        class="mb-2.5 ml-2.5 mt-2.5 break-words text-center text-sm font-semibold">
         <p>หลังจากนั้น ทุกอย่างก็สว่างวาบ . . .</p>
       </div>
     </div>
   </div>
-  <Tap delay={0.5} redirectUrl="/story/4-01" client:load />
 </ImagePageLayout>

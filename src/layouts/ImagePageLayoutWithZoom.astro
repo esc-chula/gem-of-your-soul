@@ -32,12 +32,9 @@ const {
           "absolute z-10 h-full w-full bg-cover bg-center",
           backgroundColor,
         )}
-        style={`background-image: url(${imageLowRes ? imageLowRes.src : image.src});`}>
-        <Image
-          src={image}
-          alt="background"
-          class="h-full w-full object-cover"
-        />
+        style={`background-image: url(${imageLowRes ? imageLowRes.src : image.src});`}
+      >
+        <Image src={image} alt="background" class="h-auto w-full" />
         <slot />
       </div>
       {
@@ -45,7 +42,7 @@ const {
           <Redirector
             redirectUrl={redirectUrl}
             redirectInterval={redirectInterval}
-            client:only="react"
+            client:only
           />
         )
       }

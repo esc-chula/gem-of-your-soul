@@ -1,8 +1,7 @@
 ---
 import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 
-import Tap from "@/components/Tap";
-import TextBubble from "@/components/TextBubble";
+import Tap from "@/components/Tap";import TextBubble from "@/components/TextBubble";
 
 import BackgroundImage from "@/assets/story/scene-3/06.webp";
 ---
@@ -13,7 +12,7 @@ import BackgroundImage from "@/assets/story/scene-3/06.webp";
       name="Engine"
       text={"เธออยากทำตำแหน่งไหนในงานนี้ไหม ?"}
       className="bg-engine"
-      client:only="react"
+      client:only
     />
   </div>
   <Tap delay={0.5} redirectUrl="/story/3-08" client:load />

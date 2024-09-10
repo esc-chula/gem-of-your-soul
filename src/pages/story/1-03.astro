@@ -3,7 +3,7 @@ import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 
 import TextBubble from "@/components/TextBubble";
 
-import BackgroundImage from "@/assets/story/scene-1/1-02.webp";
+import BackgroundImage from "@/assets/story/scene-1/03.webp";
 import AnswerComponent from "@/components/inputs/AnswerComponent";
 ---
 
@@ -13,21 +13,18 @@ import AnswerComponent from "@/components/inputs/AnswerComponent";
       name="%USERNAME%"
       text={"ทำไมตรงนั้นดูวุ่น ๆ นะ สงสัยจะมีปัญหาแน่เลย"}
       className="bg-user"
-      client:only="react"
+      client:only
     />
   </div>
 
   <AnswerComponent
     answers={[
-      { text: "ทำไมถึงเกิดปัญหา ควรปรับปรุงตรงไหน", attribute: "Ti" },
-      { text: "วิธีไหนที่จะทำให้เขื่อนสร้างสำเร็จได้", attribute: "Te" },
-      {
-        text: "พวกเขาน่าจะต้องการความช่วยเหลือนะ",
-        attribute: "Fe",
-      },
-      { text: "น่าสนใจดีแฮะ ลองเข้าไปดูก่อนดีกว่า", attribute: "Fi" },
+      { text: "ทำยังไงให้งานออกมาสมบูรณ์", attribute: "A" },
+      { text: "รีบเข้าไปช่วยดีกว่า งานจะได้เสร็จไวๆ", attribute: "B" },
+      { text: "พวกเขาน่าจะต้องการความช่วยเหลือนะ เข้าไปช่วยดีกว่า", attribute: "C" },
+      { text: "น่าสนใจจัง เข้าไปดูดีกว่า", attribute: "D" },
     ]}
     redirectUrl="/story/1-04"
-    client:only="react"
+    client:only
   />
 </ImagePageLayout>

@@ -30,10 +30,10 @@ const { title = "Gem of Your Soul" } = Astro.props;
   <body>
     <main
       class="absolute left-1/2 -z-50 flex min-h-dvh w-full max-w-md -translate-x-1/2 overflow-hidden bg-gray-100">
-      <MuteButton client:only="react" />
+      <MuteButton client:load />
       <slot />
     </main>
-    <BackgroundMusic client:only="react" />
+    <BackgroundMusic client:load />
   </body>
 </html>
 

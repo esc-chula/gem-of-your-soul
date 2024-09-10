@@ -11,6 +11,15 @@ export default {
         bull: "#95BDEC",
         engine: "#E1FFFE",
         darkness: "#6932CA",
+        intania: "#651616",
+        base: {
+          "01": "#ECD9BE",
+          "02": "#F2EDD8",
+          "03": "#F9EDDC",
+          "04": "#E3E4E8",
+          "05": "#E7EEF1",
+          "06": "#CCCCCC",
+        },
       },
       keyframes: {
         "fade-in": {

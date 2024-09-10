@@ -4,7 +4,7 @@ import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 import Tap from "@/components/Tap";
 import TextBubble from "@/components/TextBubble";
 
-import BackgroundImage from "@/assets/story/scene-0/13.webp";
+import BackgroundImage from "@/assets/story/scene-0/0-09.webp";
 ---
 
 <ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
@@ -13,7 +13,7 @@ import BackgroundImage from "@/assets/story/scene-0/13.webp";
       name="ชาไทย"
       text={"ยินดีที่ได้รู้จักนะ %USERNAME%! ไหน ๆ ก็มาถึงที่นี่แล้ว ถ้าอยากเดินทัวร์ Intanialand ซักหน่อย ก็เดินตามเรามานะ"}
       className="bg-chathai"
-      client:only
+      client:only="react"
     />
   </div>
   <Tap delay={0.5} redirectUrl="/story/0-09" client:load />

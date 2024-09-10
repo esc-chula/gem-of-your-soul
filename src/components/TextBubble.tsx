@@ -19,7 +19,12 @@ const TextBubble = ({
         className,
       )}
     >
-      <div className="mb-2.5 ml-2.5 mt-2.5 break-words text-left text-sm">
+      <div
+        className={cn(
+          "mb-2.5 ml-2.5 mt-2.5 break-words text-left text-sm",
+          className == "bg-darkness" ? "text-white" : "text-black",
+        )}
+      >
         <p>
           <span className="font-semibold">{makeText(name)}</span> :{" "}
           {makeText(text)}

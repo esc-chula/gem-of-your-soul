@@ -3,7 +3,7 @@ import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 
 import TextBubble from "@/components/TextBubble";
 
-import BackgroundImage from "@/assets/story/scene-1/04.webp";
+import BackgroundImage from "@/assets/story/scene-1/1-04.webp";
 import AnswerComponent from "@/components/inputs/AnswerComponent";
 ---
 
@@ -18,12 +18,12 @@ import AnswerComponent from "@/components/inputs/AnswerComponent";
 
   <AnswerComponent
     answers={[
-      { text: "ขอเป็นคนคำนวณโครงสร้างละกัน", attribute: "A" },
-      { text: "เราอยากออกแบบตกแต่ง", attribute: "B" },
-      { text: "อยากเป็นคนลงมือสร้างเขื่อน!", attribute: "C" },
-      { text: "อยากให้ช่วยอะไรบอกได้เลย", attribute: "D" },
+      { text: "คำนวณและวางแผนงาน", attribute: "Ni" },
+      { text: "ออกแบบตกแต่ง", attribute: "Ne" },
+      { text: "ลงมือสร้างเขื่อน", attribute: "Se" },
+      { text: "ศึกษาข้อมูลโครงสร้าง", attribute: "Si" },
     ]}
     redirectUrl="/story/1-07"
-    client:only
+    client:only="react"
   />
 </ImagePageLayout>

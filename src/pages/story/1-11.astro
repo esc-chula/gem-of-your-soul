@@ -2,10 +2,19 @@
 import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 
 import Tap from "@/components/Tap";
+import TextBubble from "@/components/TextBubble";
 
-import BackgroundImage from "@/assets/story/scene-1/08.webp";
+import BackgroundImage from "@/assets/story/scene-1/1-07.webp";
 ---
 
 <ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
+  <div class="absolute top-20 flex w-full justify-center">
+    <TextBubble
+      name="บีเวอร์"
+      text={"ในที่สุดเจ้านี่ก็เสร็จสมบูรณ์ ต้องขอบคุณ %USERNAME% มาก ๆ ไม่มี %USERNAME% จะต้องผ่านไปได้ยากมากแน่"}
+      className="bg-beaver"
+      client:only="react"
+    />
+  </div>
   <Tap delay={0.5} redirectUrl="/story/1-12" client:load />
 </ImagePageLayout>

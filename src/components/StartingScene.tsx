@@ -2,15 +2,25 @@ import { useEffect, useState } from "react";
 
 import Tap from "./Tap";
 
-import Image01 from "@/assets/story/scene-0/01.webp";
-import Image02 from "@/assets/story/scene-0/02.webp";
-import Image03 from "@/assets/story/scene-0/03.webp";
-import Image04 from "@/assets/story/scene-0/04.webp";
-import Image05 from "@/assets/story/scene-0/05.webp";
-import Image06 from "@/assets/story/scene-0/06.webp";
+import Image07 from "@/assets/story/scene-0/0-02-low.webp";
+import Image01 from "@/assets/story/scene-0/frame1.webp";
+import Image02 from "@/assets/story/scene-0/frame2.webp";
+import Image03 from "@/assets/story/scene-0/frame3.webp";
+import Image04 from "@/assets/story/scene-0/frame4.webp";
+import Image05 from "@/assets/story/scene-0/frame5.webp";
+import Image06 from "@/assets/story/scene-0/frame6.webp";
+
 
 const StartingScene = () => {
-  const images = [Image01, Image02, Image03, Image04, Image05, Image06];
+  const images = [
+    Image01,
+    Image02,
+    Image03,
+    Image04,
+    Image05,
+    Image06,
+    Image07,
+  ];
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
   const [lastImage, setLastImage] = useState<boolean>(false);
 

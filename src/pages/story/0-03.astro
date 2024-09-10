@@ -3,13 +3,10 @@ import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 
 import Tap from "@/components/Tap";
 
-import BackgroundImage from "@/assets/story/scene-0/08.webp";
-import BackgroundLowRes from "@/assets/story/scene-0/08-low.webp";
+import BackgroundImage from "@/assets/story/scene-0/0-04.webp";
+import BackgroundLowRes from "@/assets/story/scene-0/0-04-low.webp";
 ---
 
-<ImagePageLayout
-  backgroundColor="bg-[#303030]"
-  image={BackgroundImage}
-  imageLowRes={BackgroundLowRes}>
+<ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage} imageLowRes={BackgroundLowRes}>
   <Tap delay={0.5} redirectUrl="/story/0-04" client:load />
 </ImagePageLayout>

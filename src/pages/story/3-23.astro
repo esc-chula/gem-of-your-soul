@@ -1,7 +1,7 @@
 ---
 import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 
-// import Tap from "@/components/Tap";
+import Tap from "@/components/Tap";
 
 import BackgroundImage from "@/assets/story/scene-3/17.webp";
 ---
@@ -16,4 +16,5 @@ import BackgroundImage from "@/assets/story/scene-3/17.webp";
       </div>
     </div>
   </div>
+  <Tap delay={0.5} redirectUrl="/story/4-01" client:load />
 </ImagePageLayout>

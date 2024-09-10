@@ -1,0 +1,55 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+import ResultPageButton from "@/components/inputs/ResultButton.astro";
+import { Image } from "astro:assets";
+import cn from "@/utils/cn";
+
+import IntaniaShopCenterImg from "@/assets/result/intaniashop-center.png";
+import IntaniaShopSideImg from "@/assets/result/intaniashop-side.png";
+// import BackgroundImage from "@/assets/result/lapisLazuli.webp";
+
+interface Props {
+  title: string;
+  bgColor: string;
+  backgroundImage: ImageMetadata;
+}
+
+const { title, bgColor, backgroundImage } = Astro.props;
+---
+
+<BaseLayout title={title}>
+  <div class={cn("min-h-max", bgColor)}>
+    <Image src={backgroundImage} alt="background" />
+    <div class="px-[42px]">
+      <div class="flex w-full justify-between">
+        <ResultPageButton text="Back to Home" />
+        <ResultPageButton
+          text="Save Image"
+          url={backgroundImage.src}
+          download={title}
+        />
+      </div>
+      <div class="my-12 text-white">
+        <h3 class="mb-2 text-center text-base font-bold underline">Sounds</h3>
+        <p>Two of Us - Saidbysed</p>
+        <p>Caipirinha in Hawaii - Carmen María</p>
+        <p>Don't Ya Bite Now - Dan 'Lebo' Lebowitz</p>
+        <p>Intelligentsia - GODMODE</p>
+        <p>Robots and Aliens - Joel Cummins</p>
+        <p>Spring Field - GODMODE</p>
+        <p>The World's Fair - GODMODE</p>
+        <p>Sunrise in Paris - Dan Henig</p>
+        <p>Helium - TrackTribe</p>
+        <p>Dream Escape - The Tides</p>
+      </div>
+    </div>
+    <div class="flex justify-around bg-[#161616]">
+      <Image src={IntaniaShopSideImg} alt="intaniashop coming soon" />
+      <Image src={IntaniaShopCenterImg} alt="intaniashop esc" />
+      <Image src={IntaniaShopSideImg} alt="intaniashop coming soon" />
+    </div>
+  </div>
+</BaseLayout>
+
+<!-- Bg color: #061332 -->

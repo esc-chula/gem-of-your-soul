@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import Tap from "./Tap";
 
-import Image07 from "@/assets/story/scene-0/0-02.gif";
+import Image07 from "@/assets/story/scene-0/0-02-low.webp";
 import Image01 from "@/assets/story/scene-0/frame1.webp";
 import Image02 from "@/assets/story/scene-0/frame2.webp";
 import Image03 from "@/assets/story/scene-0/frame3.webp";

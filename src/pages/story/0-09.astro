@@ -13,18 +13,18 @@ import AnswerComponent from "@/components/inputs/AnswerComponent";
       name="%USERNAME%"
       text={"น่าสนใจจัง ฉันว่าดินแดนนี้เป็นดินแดนที่..."}
       className="bg-user"
-      client:only
+      client:only="react"
     />
   </div>
 
   <AnswerComponent
     answers={[
-      { text: "มีของวิเศษและเวทมนตร์", attribute: "A" },
-      { text: "ลึกลับ น่าค้นหา", attribute: "B" },
-      { text: "เต็มไปด้วยการผจญภัย", attribute: "C" },
-      { text: "สั่งสมอารยธรรมและผู้คนหลากหลาย", attribute: "D" },
+      { text: "มีเรื่องราวลึกลับ น่าค้นหา", attribute: "Ni" },
+      { text: "เต็มไปด้วยการผจญภัย", attribute: "Se" },
+      { text: "สัตว์ทุกตัวพูดได้เหมือนแมวนี่", attribute: "Si" },
+      { text: "เป็นสวรรค์บนบก นรกบนดิน", attribute: "Ne" },
     ]}
-    redirectUrl="/story/0-10"
-    client:only
+    redirectUrl="/story/1-01"
+    client:only="react"
   />
 </ImagePageLayout>

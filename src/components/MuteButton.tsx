@@ -17,6 +17,8 @@ const MuteButton = () => {
     setMute(settings.get().mute);
   };
 
+  if (window.location.pathname === "/") return null;
+
   return (
     <div
       onClick={handleClick}

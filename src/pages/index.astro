@@ -1,22 +1,23 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
-import TextBubble from "@/components/TextBubble";
+import Header from "@/components/landing/Header";
+import CatCard from "@/components/landing/CatCard";
+import ShopCard from "@/components/landing/ShopCard";
+import Footer from "@/components/landing/Footer";
 ---
 
 <BaseLayout>
-  <div class="flex h-screen w-full flex-col items-center justify-center">
-    <TextBubble
-      name="Larngear Dev"
-      text={"Hello World!"}
-      className="bg-intania text-white"
-    />
-    <a href="/story/start">
-      <TextBubble
-        name="Larngear Dev"
-        text={"เริ่มกันเลย!"}
-        className="bg-intania text-white"
-      />
-    </a>
-  </div></BaseLayout
->
+  <div class="mx-auto flex max-w-lg flex-col items-center bg-base-01">
+    {/* Header */}
+    <Header />
+
+    <!-- Card Section -->
+    <CatCard />
+    <!-- Shop Section -->
+    <ShopCard />
+
+    <!-- Footer Section -->
+    <Footer />
+  </div>
+</BaseLayout>

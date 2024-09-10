@@ -1,0 +1,21 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  text: string;
+  alt: string;
+  imgSrc: ImageMetadata;
+  url: string;
+}
+
+const { text, imgSrc, url, alt } = Astro.props;
+---
+
+<a
+  href={url}
+  target="_blank"
+  class="flex w-[210px] cursor-pointer rounded-2xl bg-[#F1F1F1] py-3"
+>
+  <Image src={imgSrc} alt={alt} class="ml-3" />
+  <span class="ml-5 mr-8 font-bold">{text}</span>
+</a>

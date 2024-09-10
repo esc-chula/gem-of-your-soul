@@ -5,7 +5,7 @@ import Tiktok from "@/assets/landing/tiktok.svg";
 
 export default function Footer() {
   return (
-    <footer className="bg-base-03 flex w-full items-center justify-center gap-3 border-t-[2px] border-black">
+    <footer className="flex w-full items-center justify-center gap-3 border-t-[2px] border-black bg-base-03">
       <img alt="larngear logo" src={LarngearLogo.src} />
       <p className="text-[20px] font-semibold text-black">LarnGear Camp</p>
       <div className="flex justify-center space-x-4">

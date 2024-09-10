@@ -5,7 +5,7 @@ import type IAnswer from "@/types/answer";
 const AnswerComponent = ({
   answers,
   redirectUrl,
-  center = false
+  center = false,
 }: {
   answers: IAnswer[];
   redirectUrl?: string;
@@ -15,8 +15,8 @@ const AnswerComponent = ({
     <div
       className={`${
         center
-          ? "fixed inset-0 flex justify-center items-center"
-          : "absolute bottom-10 w-full flex justify-center"
+          ? "fixed inset-0 flex items-center justify-center"
+          : "absolute bottom-10 flex w-full justify-center"
       }`}
     >
       <div className="flex flex-col gap-y-2">
@@ -25,7 +25,7 @@ const AnswerComponent = ({
             key={idx}
             text={answer.text}
             attribute={answer.attribute}
-            redirectUrl={answer.redirectUrl||redirectUrl||""}
+            redirectUrl={answer.redirectUrl || redirectUrl || ""}
           />
         ))}
       </div>

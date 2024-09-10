@@ -3,10 +3,9 @@ interface Props {
   text: string;
   url?: string;
   download?: string;
-  bgColor: string;
   secondaryColor: string;
 }
-const { text, url, download, bgColor, secondaryColor } = Astro.props;
+const { text, url, download, secondaryColor } = Astro.props;
 ---
 
 <a href={url} download={download}>

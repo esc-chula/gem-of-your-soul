@@ -10,17 +10,17 @@ import BackgroundImage from "@/assets/story/scene-4/03.webp";
 <ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
   <div class="absolute top-20 flex w-full justify-center">
     <div class="mb-12 flex flex-col items-center">
-        <TextBubble
+      <TextBubble
         name="%USERNAME%"
         text={"ชาไทยบาดเจ็บอะไรไหม"}
         className="bg-user"
         client:only
-        />
-        <TextBubble
+      />
+      <TextBubble
         name="ชาไทย"
         text={"ไม่เป็นไรหรอก ก็เธอใช้เวทย์มนต์ของอัญมนีช่วยเราไว้นี่นา"}
         className="bg-chathai"
-        />
+      />
     </div>
   </div>
   <Tap delay={0.5} redirectUrl="/story/4-07" client:load />

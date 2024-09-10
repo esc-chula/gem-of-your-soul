@@ -1,3 +1,6 @@
 import { persistentMap } from "@nanostores/persistent";
 
-export const userAnswer = persistentMap<Record<any, any>>("attribute:", {});
+export const userAnswer = persistentMap<Record<string, string>>(
+  "attribute:",
+  {},
+);

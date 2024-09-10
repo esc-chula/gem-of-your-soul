@@ -1,0 +1,19 @@
+---
+interface Props {
+  text: string;
+  url?: string;
+  download?: string;
+  secondaryColor: string;
+}
+const { text, url, download, secondaryColor } = Astro.props;
+---
+
+<a href={url} download={download}>
+  <button
+    type="button"
+    class={`w-[130px] max-w-xs break-words rounded-2xl p-4 text-center text-sm font-bold text-white transition-colors duration-300 hover:bg-[#FDF2BD] hover:-translate-y-1`}
+    style=`background-color: ${secondaryColor}`
+  >
+    {text}
+  </button>
+</a>

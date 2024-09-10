@@ -1,0 +1,87 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+import ResultPageButton from "@/components/result/ResultButton.astro";
+import { Image } from "astro:assets";
+
+import FacebookIcon from "@/assets/result/facebook.svg";
+import InstagramIcon from "@/assets/result/instagram.svg";
+import IntaniaShopCenterImg from "@/assets/result/intaniashop-center.png";
+import IntaniaShopSideImg from "@/assets/result/intaniashop-side.png";
+import TiktokIcon from "@/assets/result/tiktok.svg";
+import ContactLink from "@/components/result/contactLink.astro";
+
+interface Props {
+  title: string;
+  bgColor: string;
+  backgroundImage: ImageMetadata;
+  secondaryColor: string;
+}
+
+const { title, bgColor, backgroundImage, secondaryColor } = Astro.props;
+---
+
+<BaseLayout title={title}>
+  <div class="min-h-max w-dvw" style=`background-color: ${bgColor}`>
+    <Image src={backgroundImage} alt="background" />
+    <div class="px-[42px]">
+      <div class="flex w-full justify-center gap-4">
+        <ResultPageButton
+          text="Back to Home"
+          url="/"
+          secondaryColor={secondaryColor}
+        />
+        <ResultPageButton
+          text="Save Image"
+          url={backgroundImage.src}
+          download={title}
+          secondaryColor={secondaryColor}
+        />
+      </div>
+      <div class="my-12 text-white">
+        <h3 class="mb-2 text-center text-base font-bold underline">Sounds</h3>
+        <p>Two of Us - Saidbysed</p>
+        <p>Caipirinha in Hawaii - Carmen María</p>
+        <p>Don't Ya Bite Now - Dan 'Lebo' Lebowitz</p>
+        <p>Intelligentsia - GODMODE</p>
+        <p>Robots and Aliens - Joel Cummins</p>
+        <p>Spring Field - GODMODE</p>
+        <p>The World's Fair - GODMODE</p>
+        <p>Sunrise in Paris - Dan Henig</p>
+        <p>Helium - TrackTribe</p>
+        <p>Dream Escape - The Tides</p>
+      </div>
+      <div class="mb-12 flex flex-col items-center justify-center gap-3">
+        <ContactLink
+          text="LarnGear Camp"
+          alt="Facebook icon"
+          imgSrc={FacebookIcon}
+          url="https://www.facebook.com/LARNGEARCAMP"
+        />
+        <ContactLink
+          text="@larngear_camp"
+          alt="Instagram icon"
+          imgSrc={InstagramIcon}
+          url="https://www.instagram.com/larngear_camp/"
+        />
+        <ContactLink
+          text="@larngear_camp"
+          alt="Tiktok icon"
+          imgSrc={TiktokIcon}
+          url="https://www.tiktok.com/@larngear_camp"
+        />
+      </div>
+    </div>
+    <a
+      class="flex justify-around bg-[#161616]"
+      href="https://www.instagram.com/chulaintaniashop"
+      target="_blank"
+    >
+      <Image src={IntaniaShopSideImg} alt="intaniashop coming soon" />
+      <Image src={IntaniaShopCenterImg} alt="intaniashop esc" />
+      <Image src={IntaniaShopSideImg} alt="intaniashop coming soon" />
+    </a>
+  </div>
+</BaseLayout>
+
+<!-- Bg color: #061332 -->

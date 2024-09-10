@@ -6,6 +6,7 @@ import Tap from "@/components/Tap";
 import BackgroundImage from "@/assets/story/ios.webp";
 import Ios1Image from "@/assets/story/ios-1.webp";
 import Ios2Image from "@/assets/story/ios-2.webp";
+import ResetScores from "@/components/start/ResetScores";
 ---
 
 <ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
@@ -34,4 +35,5 @@ import Ios2Image from "@/assets/story/ios-2.webp";
     </div>
   </div>
   <Tap delay={0.5} redirectUrl="/story/start" color="text-black" client:load />
+  <ResetScores client:only="react" />
 </ImagePageLayout>

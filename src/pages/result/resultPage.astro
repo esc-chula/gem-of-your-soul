@@ -3,31 +3,41 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 
 import ResultPageButton from "@/components/inputs/ResultButton.astro";
 import { Image } from "astro:assets";
-import cn from "@/utils/cn";
 
+import FacebookIcon from "@/assets/result/facebook.svg";
+import InstagramIcon from "@/assets/result/instagram.svg";
 import IntaniaShopCenterImg from "@/assets/result/intaniashop-center.png";
 import IntaniaShopSideImg from "@/assets/result/intaniashop-side.png";
-// import BackgroundImage from "@/assets/result/lapisLazuli.webp";
+import TiktokIcon from "@/assets/result/tiktok.svg";
+import ContactLink from "./contactLink.astro";
 
 interface Props {
   title: string;
   bgColor: string;
   backgroundImage: ImageMetadata;
+  secondaryColor: string;
 }
 
-const { title, bgColor, backgroundImage } = Astro.props;
+const { title, bgColor, backgroundImage, secondaryColor } = Astro.props;
 ---
 
 <BaseLayout title={title}>
-  <div class={cn("min-h-max", bgColor)}>
+  <div class={`min-h-max w-dvw" bg-[${bgColor}]`}>
     <Image src={backgroundImage} alt="background" />
     <div class="px-[42px]">
-      <div class="flex w-full justify-between">
-        <ResultPageButton text="Back to Home" />
+      <div class="flex w-full justify-center gap-4">
+        <ResultPageButton
+          text="Back to Home"
+          url="/"
+          bgColor={bgColor}
+          secondaryColor={secondaryColor}
+        />
         <ResultPageButton
           text="Save Image"
           url={backgroundImage.src}
           download={title}
+          bgColor={bgColor}
+          secondaryColor={secondaryColor}
         />
       </div>
       <div class="my-12 text-white">
@@ -43,12 +53,33 @@ const { title, bgColor, backgroundImage } = Astro.props;
         <p>Helium - TrackTribe</p>
         <p>Dream Escape - The Tides</p>
       </div>
+      <div class="mb-12 flex flex-col items-center justify-center gap-3">
+        <ContactLink
+          text="LarnGear Camp"
+          imgSrc={FacebookIcon}
+          url="https://www.facebook.com/LARNGEARCAMP"
+        />
+        <ContactLink
+          text="@larngear_camp"
+          imgSrc={InstagramIcon}
+          url="https://www.instagram.com/larngear_camp/"
+        />
+        <ContactLink
+          text="@larngear_camp"
+          imgSrc={TiktokIcon}
+          url="https://www.tiktok.com/@larngear_camp"
+        />
+      </div>
     </div>
-    <div class="flex justify-around bg-[#161616]">
+    <a
+      class="flex justify-around bg-[#161616]"
+      href="https://www.instagram.com/chulaintaniashop"
+      target="_blank"
+    >
       <Image src={IntaniaShopSideImg} alt="intaniashop coming soon" />
       <Image src={IntaniaShopCenterImg} alt="intaniashop esc" />
       <Image src={IntaniaShopSideImg} alt="intaniashop coming soon" />
-    </div>
+    </a>
   </div>
 </BaseLayout>
 

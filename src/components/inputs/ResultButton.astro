@@ -3,14 +3,16 @@ interface Props {
   text: string;
   url?: string;
   download?: string;
+  bgColor: string;
+  secondaryColor: string;
 }
-const { text, url, download } = Astro.props;
+const { text, url, download, bgColor, secondaryColor } = Astro.props;
 ---
 
 <a href={url} download={download}>
   <button
     type="button"
-    class={`w-[150px] max-w-xs break-words rounded-2xl bg-[#0f3180] p-4 text-center text-base font-bold text-white transition-colors duration-300 hover:bg-[#FDF2BD] hover:text-[#061332]`}
+    class={`w-[130px] max-w-xs break-words rounded-2xl bg-[${secondaryColor}] p-4 text-center text-sm font-bold text-white transition-colors duration-300 hover:bg-[#FDF2BD] hover:text-[${bgColor}]`}
   >
     {text}
   </button>

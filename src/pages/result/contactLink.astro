@@ -1,11 +1,20 @@
 ---
+import { Image } from "astro:assets";
+
 interface Props {
   text: string;
+  imgSrc: ImageMetadata;
+  url: string;
 }
 
-const { text } = Astro.props;
+const { text, imgSrc, url } = Astro.props;
 ---
 
-<a href="#" target="_blank">
-  {text}
+<a
+  href={url}
+  target="_blank"
+  class="flex w-[210px] cursor-pointer rounded-2xl bg-[#F1F1F1] py-3"
+>
+  <Image src={imgSrc} alt="facebook" class="ml-3" />
+  <span class="ml-5 mr-8 font-bold">{text}</span>
 </a>

@@ -23,7 +23,7 @@ const BackgroundMusic = (): JSX.Element => {
   const muteState = useStore(settings);
 
   useEffect(() => {
-    if (muteState.mute === "true") {
+    if (muteState.mute === "true" || window.location.pathname === "/") {
       sound.pause();
     } else {
       if (!playing) {

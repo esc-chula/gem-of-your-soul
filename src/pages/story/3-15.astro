@@ -5,25 +5,24 @@ import Tap from "@/components/Tap";
 import TextBubble from "@/components/TextBubble";
 
 import BackgroundImage from "@/assets/story/scene-3/11.webp";
+import TextBubbleWrapper from "@/components/TextBubbleWrapper.astro";
 ---
 
 <ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
-  <div class="absolute top-20 flex w-full justify-center">
-    <div class="mb-12 flex flex-col items-center">
-      <TextBubble
-        name="???"
-        text={"ฮ่าฮ่าฮ่า !!!"}
-        className="bg-darkness"
-        client:only="react"
-      />
-      <TextBubble
-        name="%USERNAME%"
-        text={"!!!"}
-        client:only="react"
-        className="bg-user"
-        client:only="react"
-      />
-    </div>
-  </div>
+  <TextBubbleWrapper>
+    <TextBubble
+      name="???"
+      text={"ฮ่าฮ่าฮ่า !!!"}
+      className="bg-darkness"
+      client:only="react"
+    />
+    <TextBubble
+      name="%USERNAME%"
+      text={"!!!"}
+      client:only="react"
+      className="bg-user"
+      client:only="react"
+    />
+  </TextBubbleWrapper>
   <Tap delay={0.5} redirectUrl="/story/3-16" client:load />
 </ImagePageLayout>

@@ -1,6 +1,10 @@
 ---
-import Calculation from "@/components/Calculation";
+import EndingScene from "@/components/EndingScene";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 ---
 
-<Calculation client:only="react" />;
-
+<BaseLayout>
+  <div class="min-h-screen w-full bg-[#303030]">
+    <EndingScene client:only="react" />;
+  </div>
+</BaseLayout>

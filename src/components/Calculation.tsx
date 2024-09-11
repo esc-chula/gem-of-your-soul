@@ -45,6 +45,8 @@ const Calculation = () => {
 
     if (window) window.location.href = `/result/${url[result]}`;
   }, []);
+
+  return <div></div>;
 };
 
 export default Calculation;

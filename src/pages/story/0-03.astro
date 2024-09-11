@@ -4,8 +4,16 @@ import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 import Tap from "@/components/Tap";
 
 import BackgroundImage from "@/assets/story/scene-0/0-04.webp";
+import TextBubble from "@/components/TextBubble";
 ---
 
 <ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
+  <div class="absolute top-20 flex w-full justify-center">
+    <TextBubble
+      name="???"
+      text={"เธอ...เป็นยังไงบ้าง"}
+      className="bg-chathai"
+    />
+  </div>
   <Tap delay={0.5} redirectUrl="/story/0-04" client:load />
 </ImagePageLayout>

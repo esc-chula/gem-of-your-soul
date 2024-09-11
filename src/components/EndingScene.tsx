@@ -6,13 +6,15 @@ import Image03 from "@/assets/story/scene-4/4-10/frame3.webp";
 import Image04 from "@/assets/story/scene-4/4-10/frame4.webp";
 import Image05 from "@/assets/story/scene-4/4-10/frame5.webp";
 import Image06 from "@/assets/story/scene-4/4-10/frame6.webp";
+import { userAnswer } from "@/stores/userAnswerStores";
+import calculateResult from "@/utils/calculateResult";
+import { useStore } from "@nanostores/react";
 
-import Calculation from "./Calculation";
-
-const StartingScene = () => {
+const EndingScene = () => {
   const images = [Image01, Image02, Image03, Image04, Image05, Image06];
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
   const [lastImage, setLastImage] = useState<boolean>(false);
+  const $scores = useStore(userAnswer);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -30,6 +32,13 @@ const StartingScene = () => {
     return () => clearInterval(interval);
   }, [currentImageIndex]);
 
+  useEffect(() => {
+    if (lastImage) {
+      const jewelry = calculateResult($scores);
+      if (window) window.location.href = `/result/${jewelry}`;
+    }
+  }, [lastImage]);
+
   return (
     <>
       <img
@@ -40,9 +49,8 @@ const StartingScene = () => {
         }}
         className="absolute z-0"
       />
-      {lastImage && <Calculation />}
     </>
   );
 };
 
-export default StartingScene;
+export default EndingScene;

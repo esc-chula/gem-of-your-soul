@@ -1,23 +1,15 @@
 ---
 import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 
-import BackgroundImage from "@/assets/story/scene-2/2-11.webp";
+import BackgroundImage from "@/assets/story/scene-2/2-13.webp";
 import Tap from "@/components/Tap";
+import TextBubbleWrapper from "@/components/TextBubbleWrapper.astro";
 import TextBubble from "@/components/TextBubble";
 ---
 
-<ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}
-  ><div class="absolute top-20 flex w-full justify-center">
-    <TextBubble
-      name="ชาไทย"
-      text={"โรงงานนี้ใหญ่เลยมีระบบที่หลากหลาย เธออยากไปดูงานส่วนไหน"}
-      className="bg-chathai"
-    />
-  </div>
-  <Tap
-    delay={0.5}
-    redirectUrl="/story/2-14"
-    color="text-black"
-    client:load
-  /></ImagePageLayout
->
+<ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
+  <TextBubbleWrapper>
+    <TextBubble name="ชาไทย" text={"ไฟดับเหรอ !"} className="bg-chathai" />
+  </TextBubbleWrapper>
+  <Tap delay={0.5} redirectUrl="/story/2-14-01" client:load />
+</ImagePageLayout>

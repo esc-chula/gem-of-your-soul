@@ -1,22 +1,23 @@
 ---
 import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 
-import BackgroundImage from "@/assets/story/scene-2/2-10.webp";
+import BackgroundImage from "@/assets/story/scene-2/2-09.webp";
 import Tap from "@/components/Tap";
 import TextBubble from "@/components/TextBubble";
+import TextBubbleWrapper from "@/components/TextBubbleWrapper.astro";
 ---
 
-<ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}
-  ><div class="absolute top-20 flex w-full justify-center">
+<ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
+  <TextBubbleWrapper>
     <TextBubble
       name="กระทิงดำกล้ามโต (ยิ้ม)"
       text={"เยี่ยมมาก %USERNAME% เพื่อเป็นการตอบแทน ฉันจะเล่าเรื่องโรงงานนี้ให้ฟังละกัน"}
       className="bg-bull"
     />
-  </div>
+  </TextBubbleWrapper>
   <Tap
     delay={0.5}
-    redirectUrl="/story/2-12"
+    redirectUrl="/story/2-09-02"
     color="text-black"
     client:load
   /></ImagePageLayout

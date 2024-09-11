@@ -1,20 +1,24 @@
 ---
 import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 
-import TextBubble from "@/components/TextBubble";
-
-import BackgroundImage from "@/assets/story/scene-2/2-17.webp";
-import TextBubbleWrapper from "@/components/TextBubbleWrapper.astro";
+import BackgroundImage from "@/assets/story/scene-2/2-07.webp";
 import Tap from "@/components/Tap";
+import TextBubble from "@/components/TextBubble";
+import TextBubbleWrapper from "@/components/TextBubbleWrapper.astro";
 ---
 
 <ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
   <TextBubbleWrapper>
     <TextBubble
       name="ชาไทย"
-      text={"พวกเรารีบไปดูข้างในกันเถอะ!"}
+      text={"%USERNAME% เราจะทำยังไงกันดี ?"}
       className="bg-chathai"
     />
   </TextBubbleWrapper>
-  <Tap delay={0.5} redirectUrl="/story/2-18-01" client:load />
-</ImagePageLayout>
+  <Tap
+    delay={0.5}
+    redirectUrl="/story/2-07-02"
+    color="text-black"
+    client:load
+  /></ImagePageLayout
+>

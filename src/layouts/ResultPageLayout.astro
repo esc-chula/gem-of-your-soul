@@ -21,7 +21,7 @@ interface Props {
 const { title, bgColor, backgroundImage, secondaryColor } = Astro.props;
 ---
 
-<BaseLayout title={title}>
+<BaseLayout title={title} bgm={false}>
   <div class="min-h-max w-dvw" style=`background-color: ${bgColor}`>
     <Image src={backgroundImage} alt="background" />
     <div class="px-[42px]">

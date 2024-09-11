@@ -27,7 +27,7 @@ const EndingScene = () => {
           return prev + 1;
         }
       });
-    }, 750);
+    }, 100);
 
     return () => clearInterval(interval);
   }, [currentImageIndex]);

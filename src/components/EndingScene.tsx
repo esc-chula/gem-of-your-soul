@@ -15,6 +15,7 @@ const EndingScene = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
   const [lastImage, setLastImage] = useState<boolean>(false);
   const $scores = useStore(userAnswer);
+  const jewelry = calculateResult($scores);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -34,7 +35,6 @@ const EndingScene = () => {
 
   useEffect(() => {
     if (lastImage) {
-      const jewelry = calculateResult($scores);
       if (window) window.location.href = `/result/${jewelry}`;
     }
   }, [lastImage]);

@@ -6,6 +6,8 @@ import { userName } from "@/stores/userNameStores";
 
 import { toast, Toaster } from "react-hot-toast";
 
+import { navigate } from "astro:transitions/client";
+
 const NameInput = ({ redirectUrl }: { redirectUrl: string }) => {
   const [name, setName] = useState<string>("");
   const debouncedName = useDebounce(name);
@@ -29,7 +31,7 @@ const NameInput = ({ redirectUrl }: { redirectUrl: string }) => {
     userName.set(trimmedName);
 
     setTimeout(() => {
-      window.location.href = redirectUrl;
+      navigate(redirectUrl);
     }, 300);
   };
 

@@ -35,7 +35,7 @@ const { title = "Gem of Your Soul", bgm = true } = Astro.props;
       {bgm && <MuteButton client:only="react" />}
       <slot />
     </main>
-    {bgm && <BackgroundMusic client:only="react" />}
+    {bgm && <BackgroundMusic client:only="react" transition:persist />}
   </body>
 </html>
 

@@ -34,7 +34,7 @@ const NameInput = ({ redirectUrl }: { redirectUrl: string }) => {
   };
 
   return (
-    <div className="absolute top-0 flex min-h-screen w-full items-end justify-center">
+    <div className="absolute top-0 flex h-full w-full items-end justify-center">
       <div className="mb-12 flex flex-col items-center">
         <Toaster />
         <input

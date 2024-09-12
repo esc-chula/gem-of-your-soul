@@ -26,6 +26,17 @@ const {
 ---
 
 <BaseLayout title={title}>
+  {
+    imageLowRes && (
+      <link
+        rel="preload"
+        href={imageLowRes.src}
+        as="image"
+        fetchpriority="high"
+        slot="head"
+      />
+    )
+  }
   <div
     class={cn(
       "absolute z-10 h-full w-full bg-cover bg-center",

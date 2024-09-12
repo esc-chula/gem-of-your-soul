@@ -26,6 +26,7 @@ const { title = "Gem of Your Soul", bgm = true } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <ViewTransitions />
+    <slot name="head" />
     <title>{title}</title>
   </head>
   <body>

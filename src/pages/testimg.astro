@@ -1,0 +1,41 @@
+---
+import BackgroundImage from "@/assets/story/scene-0/0-08.webp";
+import BackgroundImageLow from "@/assets/story/scene-0/0-08-low.webp";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+
+let imglow = true;
+---
+
+<!-- <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body> </body>
+</html> -->
+<BaseLayout>
+  {
+    imglow && (
+      <link
+        rel="preload"
+        href={BackgroundImageLow.src}
+        as="image"
+        fetchpriority="high"
+        slot="head"
+      />
+    )
+  }
+  <div
+    class="absolute z-10 h-full w-full bg-cover bg-center"
+    style={`background-image: url(${BackgroundImageLow ? BackgroundImageLow.src : BackgroundImage.src});`}
+  >
+    <Image
+      src={BackgroundImage}
+      alt="background"
+      class="h-full w-full object-cover"
+    />
+  </div>
+</BaseLayout>

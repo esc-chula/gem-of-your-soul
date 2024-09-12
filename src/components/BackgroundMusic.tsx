@@ -34,7 +34,7 @@ const sounds = initializeSound([
   Music4,
 ]);
 
-const regexs: string[] = [
+const regexs: RegExp[] = [
   /^\/story\/0-.*/,
   /^\/story\/1-.*/,
   /^\/story\/2-(0[1-9]|10|11).*/,
@@ -46,13 +46,11 @@ const regexs: string[] = [
 
 const updatePlayer = (mute: boolean, path: string) => {
   for (let i = 0; i < regexs.length; i++) {
-    console.log(`Regex test ${regexs[i]}: ${regexs[i].test(path)}`);
     if (regexs[i].test(path) && !mute) {
       if (!sounds[i]?.playing()) {
         sounds[i].play();
       }
     } else {
-      console.log("Sound stop");
       sounds[i].stop();
     }
   }

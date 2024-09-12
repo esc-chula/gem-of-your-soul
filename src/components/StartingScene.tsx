@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 
 import Tap from "./Tap";
 
-import Image07 from "@/assets/story/scene-0/0-02.webp";
 import Image01 from "@/assets/story/scene-0/0-01/frame1.webp";
 import Image02 from "@/assets/story/scene-0/0-01/frame2.webp";
 import Image03 from "@/assets/story/scene-0/0-01/frame3.webp";
 import Image04 from "@/assets/story/scene-0/0-01/frame4.webp";
 import Image05 from "@/assets/story/scene-0/0-01/frame5.webp";
 import Image06 from "@/assets/story/scene-0/0-01/frame6.webp";
+import Image07 from "@/assets/story/scene-0/0-02.webp";
 
 const StartingScene = () => {
   const images = [

@@ -5,20 +5,9 @@ import Tap from "@/components/Tap";
 import TextBubble from "@/components/TextBubble";
 
 import BackgroundImage from "@/assets/story/scene-0/0-09.webp";
-import { getImage } from "astro:assets";
-const optimizedImage = await getImage({
-  src: BackgroundImage,
-  format: "webp",
-  width: 500, // resize optional
-  height: 500, // resize optional
-  quality: 50, // quality optional
-});
 ---
 
 <ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
-  <Fragment slot="head">
-    <link rel="preload" href={optimizedImage.src} as="image" />
-  </Fragment>
   <div class="absolute top-20 flex w-full justify-center">
     <TextBubble
       name="ชาไทย"

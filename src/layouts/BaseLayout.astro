@@ -27,7 +27,6 @@ const { title = "Gem of Your Soul", bgm = true } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <ViewTransitions />
     <title>{title}</title>
-    <slot name="head" />
   </head>
   <body>
     <main
@@ -35,7 +34,6 @@ const { title = "Gem of Your Soul", bgm = true } = Astro.props;
     >
       {bgm && <MuteButton client:only="react" />}
       <slot />
-      <slot name="table" />
     </main>
     {bgm && <BackgroundMusic client:only="react" transition:persist />}
   </body>

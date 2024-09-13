@@ -4,10 +4,15 @@ import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 import Tap from "@/components/Tap";
 
 import BackgroundImage from "@/assets/story/scene-2/2-01.webp";
+import BackgroundImageLow from "@/assets/story/scene-2/2-01-low.webp";
 import DescribeText from "@/components/DescribeText.astro";
 ---
 
-<ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
+<ImagePageLayout
+  backgroundColor="bg-[#303030]"
+  image={BackgroundImage}
+  imageLowRes={BackgroundImageLow}
+>
   <DescribeText>
     ชาไทยได้นำคุณมายัง "โรงงานแห่งจักรกลบนฟ้า"
     ซึ่งเป็นโรงงานเครื่องบินที่ตั้งบนท้องฟ้า

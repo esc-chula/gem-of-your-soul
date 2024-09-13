@@ -2,11 +2,16 @@
 import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 
 import BackgroundImage from "@/assets/story/scene-2/2-10.webp";
+import BackgroundImageLow from "@/assets/story/scene-2/2-10-low.webp";
 import Tap from "@/components/Tap";
 import TextBubble from "@/components/TextBubble";
 ---
 
-<ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
+<ImagePageLayout
+  backgroundColor="bg-[#303030]"
+  image={BackgroundImage}
+  imageLowRes={BackgroundImageLow}
+>
   <div class="absolute top-20 flex w-full justify-center">
     <TextBubble
       name="ชาไทย"

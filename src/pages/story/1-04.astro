@@ -5,9 +5,14 @@ import Tap from "@/components/Tap";
 import TextBubble from "@/components/TextBubble";
 
 import BackgroundImage from "@/assets/story/scene-1/1-04.webp";
+import BackgroundImageLow from "@/assets/story/scene-1/1-04-low.webp";
 ---
 
-<ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
+<ImagePageLayout
+  backgroundColor="bg-[#303030]"
+  image={BackgroundImage}
+  imageLowRes={BackgroundImageLow}
+>
   <div class="absolute top-20 flex w-full justify-center">
     <TextBubble
       name="%USERNAME%"

@@ -4,9 +4,14 @@ import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 import Tap from "@/components/Tap";
 
 import BackgroundImage from "@/assets/story/scene-3/01.webp";
+import BackgroundImageLow from "@/assets/story/scene-3/01-low.webp";
 ---
 
-<ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
+<ImagePageLayout
+  backgroundColor="bg-[#303030]"
+  image={BackgroundImage}
+  imageLowRes={BackgroundImageLow}
+>
   <div class="absolute top-20 flex w-full justify-center">
     <div
       class="h-fit w-80 select-none rounded-xl border-4 border-white bg-white"

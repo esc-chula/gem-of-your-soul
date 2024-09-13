@@ -4,9 +4,14 @@ import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 import Tap from "@/components/Tap";
 
 import BackgroundImage from "@/assets/story/scene-0/0-11.webp";
+import BackgroundImageLow from "@/assets/story/scene-0/0-11-low.webp";
 ---
 
 <!-- TODO: add zoom animation -->
-<ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
+<ImagePageLayout
+  backgroundColor="bg-[#303030]"
+  image={BackgroundImage}
+  imageLowRes={BackgroundImageLow}
+>
   <Tap delay={0.5} redirectUrl="/story/1-01" color="text-black" client:load />
 </ImagePageLayout>

@@ -5,10 +5,15 @@ import Tap from "@/components/Tap";
 import TextBubble from "@/components/TextBubble";
 
 import BackgroundImage from "@/assets/story/scene-2/2-03.webp";
+import BackgroundImageLow from "@/assets/story/scene-2/2-03-low.webp";
 import TextBubbleWrapper from "@/components/TextBubbleWrapper.astro";
 ---
 
-<ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
+<ImagePageLayout
+  backgroundColor="bg-[#303030]"
+  image={BackgroundImage}
+  imageLowRes={BackgroundImageLow}
+>
   <TextBubbleWrapper>
     <TextBubble
       name="กระทิงกล้ามโต"

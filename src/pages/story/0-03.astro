@@ -4,10 +4,15 @@ import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 import Tap from "@/components/Tap";
 
 import BackgroundImage from "@/assets/story/scene-0/0-04.webp";
+import BackgroundImageLow from "@/assets/story/scene-0/0-04-low.webp";
 import TextBubble from "@/components/TextBubble";
 ---
 
-<ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
+<ImagePageLayout
+  backgroundColor="bg-[#303030]"
+  image={BackgroundImage}
+  imageLowRes={BackgroundImageLow}
+>
   <div class="absolute top-20 flex w-full justify-center">
     <TextBubble
       name="???"

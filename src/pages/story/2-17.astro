@@ -4,11 +4,17 @@ import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 import TextBubble from "@/components/TextBubble";
 
 import BackgroundImage from "@/assets/story/scene-2/2-17.webp";
+import BackgroundImageLow from "@/assets/story/scene-2/2-17-low.webp";
+
 import TextBubbleWrapper from "@/components/TextBubbleWrapper.astro";
 import Tap from "@/components/Tap";
 ---
 
-<ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
+<ImagePageLayout
+  backgroundColor="bg-[#303030]"
+  image={BackgroundImage}
+  imageLowRes={BackgroundImageLow}
+>
   <TextBubbleWrapper>
     <TextBubble
       name="ชาไทย"

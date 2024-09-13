@@ -16,7 +16,10 @@ export default function ShopCard() {
             className="bg-gray aspect-square w-[171px] rounded-[15px]"
           />
         </a>
-        <a className="transition hover:cursor-not-allowed">
+        <a
+          href="https://www.instagram.com/chulaintaniashop"
+          className="transition hover:cursor-not-allowed"
+        >
           <img
             src={ComingSoon.src}
             alt="Coming Soon"
@@ -32,6 +35,8 @@ export default function ShopCard() {
           <img
             src={InstagramColor.src}
             className="mr-2 aspect-square w-[25px]"
+            alt="Instagram logo"
+            loading="lazy"
           />
           @chulaintaniashop
         </a>

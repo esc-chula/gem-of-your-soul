@@ -30,7 +30,7 @@ const Tap = ({
         >
           <span
             className={cn(
-              "absolute bottom-[20%] right-10 text-xl font-semibold",
+              "absolute bottom-[20%] right-10 animate-pulse text-xl font-semibold",
               color === undefined ? "text-white" : color,
             )}
           >

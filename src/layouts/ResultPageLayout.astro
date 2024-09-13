@@ -23,8 +23,8 @@ const { title, bgColor, backgroundImage, secondaryColor } = Astro.props;
 
 <BaseLayout title={title} bgm={false}>
   <div class="min-h-max w-dvw" style=`background-color: ${bgColor}`>
-    <Image src={backgroundImage} alt="background" />
-    <div class="px-[42px]">
+    <Image src={backgroundImage} alt="background" class="mb-[-10px]" />
+    <div class="relative z-10 px-[42px]" style=`background-color: ${bgColor}`>
       <div class="flex w-full justify-center gap-4">
         <ResultPageButton
           text="Back to Home"

@@ -12,9 +12,10 @@ import BackgroundMusic from "@/components/BackgroundMusic";
 
 interface Props {
   title?: string;
+  bgm?: boolean;
 }
 
-const { title = "Gem of Your Soul" } = Astro.props;
+const { title = "Gem of Your Soul", bgm = true } = Astro.props;
 ---
 
 <!doctype html>
@@ -31,10 +32,10 @@ const { title = "Gem of Your Soul" } = Astro.props;
     <main
       class="absolute left-1/2 -z-50 flex min-h-dvh w-full max-w-md -translate-x-1/2 overflow-hidden bg-gray-100"
     >
-      <MuteButton client:only="react" />
+      {bgm && <MuteButton client:only="react" />}
       <slot />
     </main>
-    <BackgroundMusic client:only="react" />
+    {bgm && <BackgroundMusic client:only="react" transition:persist />}
   </body>
 </html>
 

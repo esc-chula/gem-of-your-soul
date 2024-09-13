@@ -1,3 +1,4 @@
+import { navigate } from "astro:transitions/client";
 import { useEffect } from "react";
 
 const Redirector = ({
@@ -9,7 +10,7 @@ const Redirector = ({
 }) => {
   useEffect(() => {
     const timeOut = setTimeout(() => {
-      window.location.href = redirectUrl;
+      navigate(redirectUrl);
     }, redirectInterval * 1000);
 
     return () => {

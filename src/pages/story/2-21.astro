@@ -1,18 +1,14 @@
 ---
 import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
 
-import BackgroundImage from "@/assets/story/scene-2/2-17.webp";
-import TextBubble from "@/components/TextBubble";
+import BackgroundImage from "@/assets/story/scene-2/2-21.webp";
 import Tap from "@/components/Tap";
+import DescribeText from "@/components/DescribeText.astro";
 ---
 
 <ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
-  <div class="absolute top-20 flex w-full justify-center">
-    <TextBubble
-      name="กระทิงกล้ามโต"
-      text={"แย่แล้วล่ะ โรงงานเราไม่เคยเกิดอะไรแบบนี้ขึ้นนะ"}
-      className="bg-bull"
-    />
-  </div>
-  <Tap delay={0.5} redirectUrl="/story/2-22" client:load />
+  <DescribeText>
+    คุณและชาไทย บอกลาเหล่าวิศวกรในโรงงานเครื่องบิน และก้าวต่อไปยังดินแดนที่สาม…
+  </DescribeText>
+  <Tap delay={0.5} redirectUrl="/story/2-22" color="text-black" client:load />
 </ImagePageLayout>

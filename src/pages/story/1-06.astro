@@ -5,16 +5,17 @@ import TextBubble from "@/components/TextBubble";
 
 import BackgroundImage from "@/assets/story/scene-1/1-04.webp";
 import AnswerComponent from "@/components/inputs/AnswerComponent";
+import TextBubbleWrapper from "@/components/TextBubbleWrapper.astro";
 ---
 
 <ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
-  <div class="absolute top-20 flex w-full justify-center">
+  <TextBubbleWrapper>
     <TextBubble
       name="บีเวอร์"
       text={"โอ้ ! สวัสดี เราบีเวอร์นะ เรากำลังต้องการผู้ช่วยพอดีเลย อยากทำหน้าที่ไหนเป็นพิเศษมั้ย"}
       className="bg-beaver"
     />
-  </div>
+  </TextBubbleWrapper>
 
   <AnswerComponent
     answers={[

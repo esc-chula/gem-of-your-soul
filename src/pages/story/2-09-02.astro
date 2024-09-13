@@ -1,0 +1,29 @@
+---
+import ImagePageLayout from "@/layouts/ImagePageLayout.astro";
+
+import BackgroundImage from "@/assets/story/scene-2/2-09.webp";
+import Tap from "@/components/Tap";
+import TextBubble from "@/components/TextBubble";
+import TextBubbleWrapper from "@/components/TextBubbleWrapper.astro";
+---
+
+<ImagePageLayout backgroundColor="bg-[#303030]" image={BackgroundImage}>
+  <TextBubbleWrapper>
+    <TextBubble
+      name="กระทิงกล้ามโต (ยิ้ม)"
+      text={"เยี่ยมมาก %USERNAME% เพื่อเป็นการตอบแทน ฉันจะเล่าเรื่องโรงงานนี้ให้ฟังละกัน"}
+      className="bg-bull"
+    />
+    <TextBubble
+      name="กระทิงกล้ามโต"
+      text={"อย่างที่เห็น เราเป็นโรงงานที่สร้างเครื่องบิน ทั้งฝ่ายประกอบชิ้นส่วน วางระบบในโรงงาน ตรวจสอบมาตรฐาน และก็มีด้านเชื้อเพลิงนิวเคลียร์ด้วย"}
+      className="bg-bull"
+    />
+  </TextBubbleWrapper>
+  <Tap
+    delay={0.5}
+    redirectUrl="/story/2-10-01"
+    color="text-black"
+    client:load
+  /></ImagePageLayout
+>

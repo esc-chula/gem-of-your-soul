@@ -1,15 +1,15 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
 
 import ResultPageButton from "@/components/result/ResultButton.astro";
-import { Image } from "astro:assets";
+import ContactLink from "@/components/result/contactLink.astro";
 
 import FacebookIcon from "@/assets/result/facebook.svg";
 import InstagramIcon from "@/assets/result/instagram.svg";
+import TiktokIcon from "@/assets/result/tiktok.svg";
 import IntaniaShopCenterImg from "@/assets/result/intaniashop-center.png";
 import IntaniaShopSideImg from "@/assets/result/intaniashop-side.png";
-import TiktokIcon from "@/assets/result/tiktok.svg";
-import ContactLink from "@/components/result/contactLink.astro";
 
 interface Props {
   title: string;
@@ -21,7 +21,7 @@ interface Props {
 const { title, bgColor, backgroundImage, secondaryColor } = Astro.props;
 ---
 
-<BaseLayout title={title}>
+<BaseLayout title={title} bgm={false}>
   <div class="min-h-max w-dvw" style=`background-color: ${bgColor}`>
     <Image src={backgroundImage} alt="background" />
     <div class="px-[42px]">
@@ -83,5 +83,3 @@ const { title, bgColor, backgroundImage, secondaryColor } = Astro.props;
     </a>
   </div>
 </BaseLayout>
-
-<!-- Bg color: #061332 -->

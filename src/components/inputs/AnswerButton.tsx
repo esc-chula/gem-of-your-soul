@@ -1,4 +1,5 @@
 import { userAnswer } from "@/stores/userAnswerStores";
+import { navigate } from "astro:transitions/client";
 
 const AnswerButton = ({
   text,
@@ -15,7 +16,7 @@ const AnswerButton = ({
     userAnswer.setKey(attribute, (currentScore + 1).toString());
 
     setTimeout(() => {
-      window.location.href = redirectUrl;
+      navigate(redirectUrl);
     }, 300);
   };
 

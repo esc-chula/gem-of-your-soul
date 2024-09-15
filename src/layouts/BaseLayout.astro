@@ -9,6 +9,7 @@ import { ViewTransitions } from "astro:transitions";
 
 import MuteButton from "@/components/MuteButton";
 import BackgroundMusic from "@/components/BackgroundMusic";
+import { SEO } from "astro-seo";
 
 interface Props {
   title?: string;
@@ -21,15 +22,77 @@ const { title = "Gem of Your Soul", bgm = true } = Astro.props;
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
+    <!-- Google tag (gtag.js) -->
+    <script
+      is:inline
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-LRBRJ3TDDW"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-LRBRJ3TDDW");
+    </script>
+    <SEO
+      title={title}
+      titleDefault="Gem of Your Soul | Larngear camp 24"
+      canonical="https://gemofyoursoul.larngear.org/"
+      noindex={false}
+      charset="UTF-8"
+      description="มาตามหาอัญมณีในตัวคุณไปกับเรื่องราวการผจญภัยในโลกที่จะทำให้คุณได้ค้นพบบางสิ่งที่หลงลืมไป ติดตามรายละเอียดได้ทางค่ายลานเกียร์ครั้งที่ 24 IG: larngear_camp"
+      languageAlternates={[
+        { href: "https://gemofyoursoul.larngear.org/", hrefLang: "th" },
+      ]}
+      openGraph={{
+        basic: {
+          title: title,
+          type: "website",
+          image: "./gemofyoursoul.jpg",
+          url: "https://gemofyoursoul.larngear.org/",
+        },
+        image: {
+          type: "image/jpeg",
+          secureUrl: "https://gemofyoursoul.larngear.org/gemofyoursoul.jpg",
+          alt: "Gem of Your Soul",
+          width: 1080,
+          height: 1080,
+        },
+      }}
+      twitter={{
+        card: "summary_large_image",
+        title: title,
+        description:
+          "มาตามหาอัญมณีในตัวคุณไปกับเรื่องราวการผจญภัยในโลกที่จะทำให้คุณได้ค้นพบบางสิ่งที่หลงลืมไป ติดตามรายละเอียดได้ทางค่ายลานเกียร์ครั้งที่ 24 IG: larngear_camp",
+        image: "./gemofyoursoul.jpg",
+        imageAlt: "Gem of Your Soul",
+      }}
+      extend={{
+        link: [
+          {
+            rel: "icon",
+            type: "image/svg+xml",
+            href: "/favicon.svg",
+          },
+        ],
+        meta: [
+          { httpEquiv: "X-UA-Compatible", content: "IE=edge" },
+          {
+            name: "viewport",
+            content: "width=device-width, initial-scale=1.0",
+          },
+          { name: "generator", content: Astro.generator },
+          { name: "theme-color", content: "#333333" },
+        ],
+      }}
+    />
     <ViewTransitions />
     <slot name="head" />
     <title>{title}</title>
   </head>
-  <body>
+  <body style="font-family: 'Chakra Petch', sans-serif;">
     <main
       class="absolute left-1/2 -z-50 flex min-h-dvh w-full max-w-md -translate-x-1/2 overflow-hidden bg-gray-100"
     >
@@ -39,9 +102,3 @@ const { title = "Gem of Your Soul", bgm = true } = Astro.props;
     {bgm && <BackgroundMusic client:only="react" transition:persist />}
   </body>
 </html>
-
-<style is:global>
-  body {
-    font-family: "Chakra Petch", sans-serif;
-  }
-</style>

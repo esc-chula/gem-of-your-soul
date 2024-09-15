@@ -1,4 +1,4 @@
-# Yak-La
+# Gem of Your Soul
 
 ## Prerequisites
 
@@ -14,7 +14,9 @@ This project uses `pnpm` as the Node package manager.
     ├── components/
     ├── layouts/
     ├── pages/
-    └── stores/
+    ├── stores/
+    ├── types/
+    └── utils/
 ```
 
 ## Getting Started
@@ -22,13 +24,13 @@ This project uses `pnpm` as the Node package manager.
 1. Clone this repository
 
 ```
-git clone git@github.com:esc-chula/yak-la.git
+git clone git@github.com:esc-chula/gem-of-your-soul.git
 ```
 
 2. Change directory
 
 ```
-cd yak-la
+cd gem-of-your-soul
 ```
 
 3. Install dependencies

@@ -22,9 +22,11 @@ const { title = "Gem of Your Soul", bgm = true } = Astro.props;
 <html lang="en">
   <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LRBRJ3TDDW"
-    ></script>
-    <script>
+    <script
+      is:inline
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-LRBRJ3TDDW"></script>
+    <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);

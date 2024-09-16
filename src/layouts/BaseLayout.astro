@@ -20,7 +20,7 @@ const { title = "Gem of Your Soul", bgm = true } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" transition:animate="none">
   <head>
     <!-- Google tag (gtag.js) -->
     <script
@@ -95,6 +95,7 @@ const { title = "Gem of Your Soul", bgm = true } = Astro.props;
   <body style="font-family: 'Chakra Petch', sans-serif;">
     <main
       class="absolute left-1/2 -z-50 flex min-h-dvh w-full max-w-md -translate-x-1/2 overflow-hidden bg-gray-100"
+      transition:animate="initial"
     >
       {bgm && <MuteButton client:only="react" />}
       <slot />
